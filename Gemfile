@@ -9,6 +9,8 @@ end
 gem 'twitter-bootstrap-rails', '~> 4.0'
 # Forms made easy!
 gem 'simple_form', '~> 3.5'
+# RailsAdmin is a Rails engine that provides an easy-to-use interface for managing your data
+gem 'rails_admin', '~> 1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
