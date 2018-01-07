@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.datetime :birth_date
       t.string :cpf
       t.string :rg
-      t.boolean :status
+      t.boolean :status, default: true
       t.text :notes
 
       t.timestamps
