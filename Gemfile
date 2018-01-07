@@ -7,6 +7,8 @@ end
 
 # twitter-bootstrap-rails project integrates Bootstrap CSS toolkit for Rails 4, 3.x Asset Pipeline
 gem 'twitter-bootstrap-rails', '~> 4.0'
+# Forms made easy!
+gem 'simple_form', '~> 3.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
