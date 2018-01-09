@@ -12,7 +12,9 @@ class Ability
       can :dashboard, :all            # allow access to dashboard
       if user.admin_role?
         can :manage, :all             # allow superadmins to do anything
+        cannot :edit, [Gender]
       elsif user.employee_role?
+        can :read, [Gender]
         can :update, [User], admin_role: false
       end
 

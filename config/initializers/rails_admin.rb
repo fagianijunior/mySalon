@@ -1,4 +1,21 @@
 RailsAdmin.config do |config|
+  config.model User do
+    list do
+      fields :name, :email
+      include_all_fields
+      exclude_fields :id, :password, :password_confirmation, :reset_password_token, :created_at, :updated_at, :reset_password_sent_at, :remember_created_at, :sign_in_count, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip
+    end
+    edit do
+      fields :name, :email, :gender, :birth_date, :cpf, :rg
+      field :admin_role do
+        visible do
+          bindings[:view]._current_user.admin_role?
+        end
+      end
+      include_all_fields
+      exclude_fields :id, :password, :password_confirmation, :reset_password_token, :created_at, :updated_at, :reset_password_sent_at, :remember_created_at, :sign_in_count, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip
+    end
+  end
 
   ### Popular gems integration
 
