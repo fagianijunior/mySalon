@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   validates :name, :gender, :cpf, presence: true
   belongs_to :gender
+  has_many :phones, :dependent => :destroy, :inverse_of => :user
+
+  accepts_nested_attributes_for :phones
 end

@@ -1,4 +1,13 @@
 RailsAdmin.config do |config|
+
+  config.model Phone do
+    exclude_fields :user, :user_id
+  end
+
+  config.model Phone do
+    visible false
+  end
+
   config.model User do
     list do
       fields :name, :email
