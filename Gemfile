@@ -9,6 +9,8 @@ end
 gem 'twitter-bootstrap-rails', '~> 4.0'
 # Forms made easy!
 gem 'simple_form', '~> 3.5'
+# This gem provides jQuery and the jQuery-ujs driver for your Rails 4+ application.
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 # RailsAdmin is a Rails engine that provides an easy-to-use interface for managing your data
 gem 'rails_admin', '~> 1.2'
 # Flexible authentication solution for Rails with Warden
