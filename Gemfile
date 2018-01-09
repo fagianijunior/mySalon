@@ -13,6 +13,8 @@ gem 'simple_form', '~> 3.5'
 gem 'rails_admin', '~> 1.2'
 # Flexible authentication solution for Rails with Warden
 gem 'devise', '~> 4.4'
+# Simple authorization solution for Rails. All permissions are stored in a single location.
+gem 'cancancan', '~> 2.1', '>= 2.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'

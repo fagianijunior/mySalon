@@ -24,7 +24,10 @@ ActiveRecord::Schema.define(version: 20180107033857) do
     t.datetime "birth_date"
     t.string "cpf"
     t.string "rg"
-    t.boolean "status"
+    t.boolean "admin_role"
+    t.boolean "employee_role"
+    t.boolean "user_role"
+    t.boolean "active", default: true
     t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
