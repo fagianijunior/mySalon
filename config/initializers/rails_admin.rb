@@ -1,22 +1,27 @@
 RailsAdmin.config do |config|
 
-  config.model Phone do
-    exclude_fields :user, :user_id
-  end
-
-  config.model Phone do
-    visible false
+  config.model Employee do
+    edit do
+      field :user_id, :enum do
+        enum do
+          User.where('employee_role == ?', false).map { |c| [ c.name, c.id ] }
+        end
+      end
+      field :nis
+    end
   end
 
   config.model User do
     list do
       fields :name, :email, :password, :password_confirmation
+
       include_all_fields
       exclude_fields :id, :reset_password_token, :created_at, :updated_at, :reset_password_sent_at, :remember_created_at, :sign_in_count, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip
     end
+
     edit do
       fields :name, :email, :gender, :birth_date, :cpf, :rg
-      field :admin_role do
+      fields :admin_role, :employee_role do
         visible do
           bindings[:view]._current_user.admin_role?
         end
