@@ -6,12 +6,12 @@ class Ability
     #
       user ||= User.new # guest user (not logged in)
       can :read, :all                 # allow everyone to read everything
-      return unless user.admin_role? || user.employee_role?
+      return unless user.admin_role? || !user.employee.nil?
       can :access, :rails_admin       # only allow admin users to access Rails Admin
       can :dashboard, :all            # allow access to dashboard
       if user.admin_role?
         can :manage, :all             # allow superadmins to do anything
-      elsif user.employee_role?
+      elsif !user.employee.nil?
         can :manage, [User], admin_role: false
         can :manage, [State, City, District]
       end

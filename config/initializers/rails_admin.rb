@@ -2,32 +2,49 @@ RailsAdmin.config do |config|
 
   config.model Employee do
     edit do
-      field :user_id, :enum do
-        enum do
-          User.where('employee_role == ?', false).map { |c| [ c.name, c.id ] }
-        end
+      field :user do
+        read_only true
       end
       field :nis
+    end
+
+    create do
+      field :user, :enum do
+        enum do
+          User.joins("LEFT OUTER JOIN employees ON employees.user_id = users.id").where("employees.id IS null").map { |c| [ c.name, c.id ] }
+        end
+      end
     end
   end
 
   config.model User do
     list do
       fields :name, :email, :password, :password_confirmation
-
       include_all_fields
       exclude_fields :id, :reset_password_token, :created_at, :updated_at, :reset_password_sent_at, :remember_created_at, :sign_in_count, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip
     end
 
     edit do
       fields :name, :email, :gender, :birth_date, :cpf, :rg
-      fields :admin_role, :employee_role do
+      fields :admin_role do
+        visible do
+          bindings[:view]._current_user.admin_role?
+        end
+      end
+
+      include_all_fields
+      exclude_fields :id, :reset_password_token, :created_at, :updated_at, :reset_password_sent_at, :remember_created_at, :sign_in_count, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip
+    end
+
+    create do
+      fields :name, :email, :gender, :birth_date, :cpf, :rg
+      fields :admin_role do
         visible do
           bindings[:view]._current_user.admin_role?
         end
       end
       include_all_fields
-      exclude_fields :id, :reset_password_token, :created_at, :updated_at, :reset_password_sent_at, :remember_created_at, :sign_in_count, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip
+      exclude_fields :employee, :id, :reset_password_token, :created_at, :updated_at, :reset_password_sent_at, :remember_created_at, :sign_in_count, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip
     end
   end
 

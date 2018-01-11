@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180109222047) do
+ActiveRecord::Schema.define(version: 20180110041630) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer "user_id"
@@ -68,6 +68,15 @@ ActiveRecord::Schema.define(version: 20180109222047) do
     t.index ["user_id"], name: "index_phones_on_user_id"
   end
 
+  create_table "services", force: :cascade do |t|
+    t.string "name"
+    t.time "minimum_time"
+    t.time "maximum_time"
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "states", force: :cascade do |t|
     t.string "name"
     t.string "abbreviation"
@@ -82,7 +91,6 @@ ActiveRecord::Schema.define(version: 20180109222047) do
     t.string "cpf"
     t.string "rg"
     t.boolean "admin_role"
-    t.boolean "employee_role"
     t.boolean "user_role"
     t.boolean "active", default: true
     t.text "notes"

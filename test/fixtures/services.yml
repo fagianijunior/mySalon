@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  minimum_time: 2018-01-10 01:16:30
+  maximum_time: 2018-01-10 01:16:30
+  price: 9.99
+
+two:
+  name: MyString
+  minimum_time: 2018-01-10 01:16:30
+  maximum_time: 2018-01-10 01:16:30
+  price: 9.99
