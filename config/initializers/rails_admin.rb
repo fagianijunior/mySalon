@@ -177,6 +177,12 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model Phone do
+    configure :user do
+      read_only true
+    end
+  end
+
   config.model EmployeeService do
     visible false
   end
