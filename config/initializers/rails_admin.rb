@@ -1,53 +1,5 @@
 RailsAdmin.config do |config|
 
-  config.model Employee do
-    edit do
-      field :user do
-        read_only true
-      end
-      field :nis
-    end
-
-    create do
-      field :user, :enum do
-        enum do
-          User.joins("LEFT OUTER JOIN employees ON employees.user_id = users.id").where("employees.id IS null").map { |c| [ c.name, c.id ] }
-        end
-      end
-    end
-  end
-
-  config.model User do
-    list do
-      fields :name, :email, :password, :password_confirmation
-      include_all_fields
-      exclude_fields :id, :reset_password_token, :created_at, :updated_at, :reset_password_sent_at, :remember_created_at, :sign_in_count, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip
-    end
-
-    edit do
-      fields :name, :email, :gender, :birth_date, :cpf, :rg
-      fields :admin_role do
-        visible do
-          bindings[:view]._current_user.admin_role?
-        end
-      end
-
-      include_all_fields
-      exclude_fields :id, :reset_password_token, :created_at, :updated_at, :reset_password_sent_at, :remember_created_at, :sign_in_count, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip
-    end
-
-    create do
-      fields :name, :email, :gender, :birth_date, :cpf, :rg
-      fields :admin_role do
-        visible do
-          bindings[:view]._current_user.admin_role?
-        end
-      end
-      include_all_fields
-      exclude_fields :employee, :id, :reset_password_token, :created_at, :updated_at, :reset_password_sent_at, :remember_created_at, :sign_in_count, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip
-    end
-  end
-
   ### Popular gems integration
 
   ## == Devise ==
@@ -85,5 +37,163 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+  end
+
+  config.model User do
+    weight -10
+
+    list do
+      fields :name, :email, :gender, :birth_date, :cpf, :rg, :admin_role, :employee, :user_role, :active, :phones, :address, :notes
+
+      configure :gender do
+        pretty_value do
+          bindings[:object].gender.name
+        end
+      end
+
+      configure :address do
+        pretty_value do
+          bindings[:object].address.try(:full_address)
+        end
+      end
+
+      configure :phones do
+        pretty_value do
+          phones = bindings[:object].phones.map { |c| [ c.number ] }
+          phones.compact.join(', ')
+        end
+      end
+
+      configure :employee do
+        label 'Employee role'
+        pretty_value do
+          case bindings[:object].employee.nil?
+          when true
+            %(<span class='label label-default'>&#x2012;</span>)
+          when false
+            %(<a href='/admin/employee/'+ bindings[:object].employee.id +'><span class='label label-success'>&#x2713;</span></a>)
+          end.html_safe
+        end
+      end
+    end
+
+    show do
+      fields :name, :email, :gender, :birth_date, :cpf, :rg, :admin_role, :employee, :user_role, :active, :phones, :address, :notes
+
+      configure :gender do
+        pretty_value do
+          bindings[:object].gender.name
+        end
+      end
+
+      configure :address do
+        pretty_value do
+          address = bindings[:object].address.try(:full_address)
+          if address
+            %(<a href='/admin/address/#{bindings[:object].address.id}'> #{bindings[:object].address.full_address}</a>)
+          else
+          end.html_safe
+        end
+      end
+
+      configure :phones do
+        pretty_value do
+          phones = bindings[:object].phones.map { |c| [ c.number ] }
+          phones.compact.join(', ')
+        end
+      end
+    end
+
+    update do
+      fields :name, :email, :password, :password_confirmation, :gender, :birth_date, :cpf, :rg, :admin_role, :employee, :user_role, :active, :notes, :phones, :address
+
+      configure :admin_role do
+        visible do
+          bindings[:view]._current_user.admin_role?
+        end
+      end
+
+      configure :employee do
+        visible do
+          !bindings[:object].employee.nil?
+        end
+      end
+    end
+
+    create do
+      fields :name, :email, :password, :password_confirmation, :gender, :birth_date, :cpf, :rg, :user_role, :active, :notes, :phones, :address
+
+      configure :admin_role do
+        visible do
+          bindings[:view]._current_user.admin_role?
+        end
+      end
+
+    end
+  end
+
+  config.model Employee do
+    weight -9
+    configure :employee_services do
+      visible false
+    end
+
+    # list do
+    # end
+
+    create do
+      configure :user_id, :enum do
+        enum do
+          User.joins("LEFT OUTER JOIN employees ON employees.user_id = users.id").where("employees.id IS null").map { |c| [ c.name, c.id ] }
+        end
+      end
+      exclude_fields :user
+    end
+
+    update do
+      configure :user do
+        read_only true
+      end
+    end
+
+    # show do
+    # end
+  end
+
+  config.model Service do
+    weight -8
+    fields :name, :minimum_time, :maximum_time, :price
+    configure :employee_services do
+      visible false
+    end
+
+  end
+
+  config.model Address do
+    update do
+      configure :user do
+        read_only true
+      end
+    end
+  end
+
+  config.model EmployeeService do
+    visible false
+  end
+
+  config.model State do
+    visible false
+  end
+
+  config.model City do
+    visible false
+  end
+
+  config.model District do
+    visible false
+  end
+
+  config.model Gender do
+    visible false
   end
 end
