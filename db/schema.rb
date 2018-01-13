@@ -12,12 +12,15 @@
 
 ActiveRecord::Schema.define(version: 20180111200812) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "addresses", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "cep"
-    t.integer "state_id"
-    t.integer "city_id"
-    t.integer "district_id"
+    t.bigint "state_id"
+    t.bigint "city_id"
+    t.bigint "district_id"
     t.string "street"
     t.string "number"
     t.string "complement"
@@ -31,7 +34,7 @@ ActiveRecord::Schema.define(version: 20180111200812) do
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
-    t.integer "state_id"
+    t.bigint "state_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["state_id"], name: "index_cities_on_state_id"
@@ -39,15 +42,15 @@ ActiveRecord::Schema.define(version: 20180111200812) do
 
   create_table "districts", force: :cascade do |t|
     t.string "name"
-    t.integer "city_id"
+    t.bigint "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["city_id"], name: "index_districts_on_city_id"
   end
 
   create_table "employee_services", force: :cascade do |t|
-    t.integer "employee_id"
-    t.integer "service_id"
+    t.bigint "employee_id"
+    t.bigint "service_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["employee_id"], name: "index_employee_services_on_employee_id"
@@ -55,7 +58,7 @@ ActiveRecord::Schema.define(version: 20180111200812) do
   end
 
   create_table "employees", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "nis"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -69,7 +72,7 @@ ActiveRecord::Schema.define(version: 20180111200812) do
   end
 
   create_table "phones", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "number"
     t.boolean "whatsapp"
     t.datetime "created_at", null: false
@@ -95,7 +98,7 @@ ActiveRecord::Schema.define(version: 20180111200812) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.integer "gender_id"
+    t.bigint "gender_id"
     t.datetime "birth_date"
     t.string "cpf"
     t.string "rg"
@@ -120,4 +123,15 @@ ActiveRecord::Schema.define(version: 20180111200812) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "addresses", "cities"
+  add_foreign_key "addresses", "districts"
+  add_foreign_key "addresses", "states"
+  add_foreign_key "addresses", "users"
+  add_foreign_key "cities", "states"
+  add_foreign_key "districts", "cities"
+  add_foreign_key "employee_services", "employees"
+  add_foreign_key "employee_services", "services"
+  add_foreign_key "employees", "users"
+  add_foreign_key "phones", "users"
+  add_foreign_key "users", "genders"
 end
