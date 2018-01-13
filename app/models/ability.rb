@@ -11,10 +11,10 @@ class Ability
       can :dashboard, :all            # allow access to dashboard
       if user.admin_role?
         can :manage, :all             # allow superadmins to do anything
-        cannot :create, [Address, Phone]
+        cannot :create, [Address, Phone, SalonPhone]
       elsif !user.employee.nil?
         can :manage, [User], admin_role: false
-        cannot :create, [Address, Phone]
+        cannot :create, [Address, Phone, SalonPhone]
       end
 
 

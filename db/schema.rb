@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180111200812) do
+ActiveRecord::Schema.define(version: 20180113190712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,10 +74,37 @@ ActiveRecord::Schema.define(version: 20180111200812) do
   create_table "phones", force: :cascade do |t|
     t.bigint "user_id"
     t.string "number"
-    t.boolean "whatsapp"
+    t.boolean "telegram", default: false
+    t.boolean "whatsapp", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_phones_on_user_id"
+  end
+
+  create_table "salon_phones", force: :cascade do |t|
+    t.bigint "salon_id"
+    t.string "number"
+    t.boolean "telegram"
+    t.boolean "whatsapp"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["salon_id"], name: "index_salon_phones_on_salon_id"
+  end
+
+  create_table "salons", force: :cascade do |t|
+    t.string "name"
+    t.string "cep"
+    t.bigint "state_id"
+    t.bigint "city_id"
+    t.bigint "district_id"
+    t.string "street"
+    t.string "number"
+    t.string "complement"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_salons_on_city_id"
+    t.index ["district_id"], name: "index_salons_on_district_id"
+    t.index ["state_id"], name: "index_salons_on_state_id"
   end
 
   create_table "services", force: :cascade do |t|
@@ -102,8 +129,8 @@ ActiveRecord::Schema.define(version: 20180111200812) do
     t.datetime "birth_date"
     t.string "cpf"
     t.string "rg"
-    t.boolean "admin_role"
-    t.boolean "user_role"
+    t.boolean "admin_role", default: false
+    t.boolean "user_role", default: true
     t.boolean "active", default: true
     t.text "notes"
     t.datetime "created_at", null: false
@@ -133,5 +160,9 @@ ActiveRecord::Schema.define(version: 20180111200812) do
   add_foreign_key "employee_services", "services"
   add_foreign_key "employees", "users"
   add_foreign_key "phones", "users"
+  add_foreign_key "salon_phones", "salons"
+  add_foreign_key "salons", "cities"
+  add_foreign_key "salons", "districts"
+  add_foreign_key "salons", "states"
   add_foreign_key "users", "genders"
 end

@@ -43,7 +43,7 @@ RailsAdmin.config do |config|
     weight -10
 
     list do
-      fields :name, :email, :gender, :birth_date, :cpf, :rg, :admin_role, :employee, :user_role, :active, :phones, :address, :notes
+      fields :name, :active, :admin_role, :employee, :user_role, :email, :gender, :birth_date, :cpf, :rg, :phones, :address, :notes
 
       configure :gender do
         pretty_value do
@@ -69,7 +69,7 @@ RailsAdmin.config do |config|
         pretty_value do
           case bindings[:object].employee.nil?
           when true
-            %(<span class='label label-default'>&#x2012;</span>)
+            %(<span class='label label-danger'>&#x2718;</span>)
           when false
             %(<a href='/admin/employee/'+ bindings[:object].employee.id +'><span class='label label-success'>&#x2713;</span></a>)
           end.html_safe
@@ -138,8 +138,9 @@ RailsAdmin.config do |config|
       visible false
     end
 
-    # list do
-    # end
+    list do
+      fields :user, :nis, :services
+    end
 
     create do
       configure :user_id, :enum do
@@ -178,8 +179,50 @@ RailsAdmin.config do |config|
   end
 
   config.model Phone do
-    configure :user do
-      read_only true
+    list do
+      fields :number, :telegram, :whatsapp
+    end
+    update do
+      configure :user do
+        read_only true
+      end
+    end
+  end
+
+  config.model Salon do
+
+    list do
+      # virtual field
+      configure :full_address
+      fields :name, :salon_phones, :full_address
+
+      configure :salon_phones do
+        pretty_value do
+          phones = bindings[:object].salon_phones.map { |c| [ c.number ] }
+          phones.compact.join(', ')
+        end
+      end
+    end
+
+    show do
+      configure :salon_phones do
+        pretty_value do
+          phones = bindings[:object].salon_phones.map { |c| [ c.number ] }
+          phones.compact.join(', ')
+        end
+      end
+    end
+  end
+
+  config.model SalonPhone do
+    list do
+      fields :salon, :number, :telegram, :whatsapp
+    end
+
+    update do
+      configure :salon do
+        read_only true
+      end
     end
   end
 
