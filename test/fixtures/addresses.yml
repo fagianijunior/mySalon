@@ -2,7 +2,7 @@
 
 one:
   user: one
-  cep: MyString
+  zipcode: MyString
   state: one
   city: one
   district: one
@@ -12,7 +12,7 @@ one:
 
 two:
   user: two
-  cep: MyString
+  zipcode: MyString
   state: two
   city: two
   district: two

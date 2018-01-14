@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20180113190712) do
 
   create_table "addresses", force: :cascade do |t|
     t.bigint "user_id"
-    t.string "cep"
+    t.string "zipcode"
     t.bigint "state_id"
     t.bigint "city_id"
     t.bigint "district_id"
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 20180113190712) do
 
   create_table "salons", force: :cascade do |t|
     t.string "name"
-    t.string "cep"
+    t.string "zipcode"
     t.bigint "state_id"
     t.bigint "city_id"
     t.bigint "district_id"

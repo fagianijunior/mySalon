@@ -2,20 +2,20 @@
 
 one:
   name: MyString
-  cep: MyString
+  zipcode: MyString
   state: one
   city: one
   district: one
   street: MyString
-  number: 
+  number:
   complement: MyString
 
 two:
   name: MyString
-  cep: MyString
+  zipcode: MyString
   state: two
   city: two
   district: two
   street: MyString
-  number: 
+  number:
   complement: MyString

@@ -171,6 +171,14 @@ RailsAdmin.config do |config|
   end
 
   config.model Address do
+    list do
+      fields :user, :street, :number, :complement, :district, :zipcode, :state, :city
+    end
+
+    show do
+      fields :user, :street, :number, :complement, :district, :zipcode, :state, :city
+    end
+
     update do
       configure :user do
         read_only true
