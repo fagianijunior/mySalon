@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_paper_trail
+
   validates :name, :gender, :cpf, presence: true
 
   belongs_to :gender

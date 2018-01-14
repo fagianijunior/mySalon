@@ -6,4 +6,5 @@ class Employee < ApplicationRecord
 
   accepts_nested_attributes_for :employee_services, allow_destroy: true
 
+  has_paper_trail
 end
