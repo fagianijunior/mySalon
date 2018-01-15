@@ -4,21 +4,32 @@ class Ability
   def initialize(user)
     # Define abilities for the passed in user here. For example:
     #
-      user ||= User.new # guest user (not logged in)
-      can :read, :all                 # allow everyone to read everything
-      return unless user.admin_role? || !user.employee.nil?
+    user ||= User.new # guest user (not logged in)
+#    can :read, :all                 # allow everyone to read everything
+    if !user.employee.nil? || user.admin_role? || user.ghost_role?
       can :access, :rails_admin       # only allow admin users to access Rails Admin
       can :dashboard, :all            # allow access to dashboard
-      if user.admin_role?
-        can :manage, :all             # allow superadmins to do anything
-        can :history, :all
-        cannot :create, [Address, Phone, SalonPhone]
-      elsif !user.employee.nil?
-        can :manage, [User], admin_role: false
-        cannot :create, [Address, Phone, SalonPhone]
-        cannot :history, :all
-      end
+      can :read, [Gender, State, City, District]
+    end
+    if user.ghost_role?
+      can :manage, :all
+      can :history, :all
+    elsif user.admin_role?
+      can :create, [State, City, District]
+      can :update, [State, City, District]
 
+      can :manage, [User], ghost_role: false
+      can :manage, [Employee, Service, Salon, SalonPhone]
+      can :manage, [Address, Phone], {user: {ghost_role: false}}
+      cannot :history, :all
+      cannot :create, [Address, Phone, SalonPhone]
+
+    elsif !user.employee.nil?
+      can :manage, [User], { admin_role: false, ghost_role: false }
+      cannot :history, :all
+
+
+    end
 
     #
     # The first argument to `can` is the action you are giving the user

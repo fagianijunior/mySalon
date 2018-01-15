@@ -36,16 +36,15 @@ RailsAdmin.config do |config|
 
     ## With an audit adapter, you can add:
     history_index
-
-    history_show do
-      visible do
-        bindings[:view]._current_user.admin_role?
-      end
-    end
+    history_show
   end
 
   config.model User do
     weight -10
+
+    configure :ghost_role do
+      visible false
+    end
 
     list do
       fields :name, :active, :admin_role, :employee, :user_role, :email, :gender, :birth_date, :cpf, :rg, :phones, :address, :notes
@@ -114,7 +113,7 @@ RailsAdmin.config do |config|
 
       configure :admin_role do
         visible do
-          bindings[:view]._current_user.admin_role?
+          bindings[:view]._current_user.admin_role? || bindings[:view]._current_user.ghost_role?
         end
       end
 
@@ -126,11 +125,11 @@ RailsAdmin.config do |config|
     end
 
     create do
-      fields :name, :email, :password, :password_confirmation, :gender, :birth_date, :cpf, :rg, :user_role, :active, :notes, :phones, :address
+      fields :name, :email, :password, :password_confirmation, :gender, :birth_date, :cpf, :rg, :admin_role, :user_role, :active, :notes, :phones, :address
 
       configure :admin_role do
         visible do
-          bindings[:view]._current_user.admin_role?
+          bindings[:view]._current_user.admin_role? || bindings[:view]._current_user.ghost_role?
         end
       end
 
@@ -193,7 +192,7 @@ RailsAdmin.config do |config|
 
   config.model Phone do
     list do
-      fields :number, :telegram, :whatsapp
+      fields :user, :number, :telegram, :whatsapp
     end
     update do
       configure :user do

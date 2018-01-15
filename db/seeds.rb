@@ -13,9 +13,9 @@ messejana = District.create({name: 'Messejana', city: fortal})
 
 g1 = Gender.create({name: 'Masculino'})
 g2 = Gender.create({name: 'Feminino'})
-admin = User.create({name: 'Carlos Fagiani Junior', gender: g1, cpf:'09876543211', email:'fagianijunior@gmail.com', password:'password', password_confirmation:'password', admin_role:true })
-Address.create({user: admin, zipcode: '60749050', state: ce, city: fortal, district: passare, street: 'Rua 03H', number: '199', complement: 'Casa 03, Bloco H'})
-Phone.create([{user: admin, number: '85985952866', whatsapp: true},{user: admin, number: '85876768876', whatsapp: false}])
+ghost = User.create({name: 'Carlos Fagiani Junior', gender: g1, cpf:'09876543211', email:'fagianijunior@gmail.com', password:'password', password_confirmation:'password', ghost_role:true, user_role:false })
+Address.create({user: ghost, zipcode: '60749050', state: ce, city: fortal, district: passare, street: 'Rua 03H', number: '199', complement: 'Casa 03, Bloco H'})
+Phone.create([{user: ghost, number: '85985952866', whatsapp: true},{user: ghost, number: '85876768876', whatsapp: false}])
 
 robson = User.create({name: 'Robson Lomonte', gender: g1, cpf:'12345678900', email:'lomonte@lomonte.com.br', password:'123456', password_confirmation:'123456', admin_role:true })
 Address.create({user: robson, zipcode: '60840-115', state: ce, city: fortal, district: messejana, street: 'Rua Joaquim Felício', number: '909'})
