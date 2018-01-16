@@ -17,6 +17,10 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :address, allow_destroy: true
   accepts_nested_attributes_for :employee, allow_destroy: true
 
+
+  def employee_role
+    !self.employee.nil?
+  end
   #this method is called by devise to check for "active" state of the model
   def active_for_authentication?
     #remember to call the super

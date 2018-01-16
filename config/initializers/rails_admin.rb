@@ -46,70 +46,59 @@ RailsAdmin.config do |config|
       visible false
     end
 
-    list do
-      fields :name, :active, :admin_role, :employee, :user_role, :email, :gender, :birth_date, :cpf, :rg, :phones, :address, :notes
-
-      configure :gender do
-        pretty_value do
-          bindings[:object].gender.name
-        end
-      end
-
-      configure :address do
-        pretty_value do
-          bindings[:object].address.try(:full_address)
-        end
-      end
-
-      configure :phones do
-        pretty_value do
-          phones = bindings[:object].phones.map { |c| [ c.number ] }
-          phones.compact.join(', ')
-        end
-      end
-
-      configure :employee do
-        label 'Employee role'
-        pretty_value do
-          case bindings[:object].employee.nil?
+    configure :employee_role do
+      pretty_value do
+        case value
           when true
-            %(<span class='label label-danger'>&#x2718;</span>)
+            %(<a href='/admin/employee/#{bindings[:object].employee.id}'><span class='label label-success'>&#x2713;</span></a>)
           when false
-            %(<a href='/admin/employee/'+ bindings[:object].employee.id +'><span class='label label-success'>&#x2713;</span></a>)
-          end.html_safe
-        end
+            %(<span class='label label-danger'>&#x2718;</span>)
+        end.html_safe
       end
     end
 
+    #remove o link do gender
+    configure :gender do
+      pretty_value do
+        bindings[:object].gender.name
+      end
+    end
+
+    configure :address do
+      pretty_value do
+        bindings[:object].address.try(:full_address)
+      end
+    end
+
+    configure :phones do
+      pretty_value do
+        phones = bindings[:object].phones.map { |c| [ c.number ] }
+        phones.compact.join(', ')
+      end
+    end
+
+    list do
+      fields :name, :active, :admin_role, :employee_role, :user_role, :email, :gender, :birth_date, :cpf, :rg, :phones, :address, :notes
+    end
+
     show do
-      fields :name, :email, :gender, :birth_date, :cpf, :rg, :admin_role, :employee, :user_role, :active, :phones, :address, :notes
-
-      configure :gender do
-        pretty_value do
-          bindings[:object].gender.name
-        end
-      end
-
-      configure :address do
-        pretty_value do
-          address = bindings[:object].address.try(:full_address)
-          if address
-            %(<a href='/admin/address/#{bindings[:object].address.id}'> #{bindings[:object].address.full_address}</a>)
-          else
-          end.html_safe
-        end
-      end
-
-      configure :phones do
-        pretty_value do
-          phones = bindings[:object].phones.map { |c| [ c.number ] }
-          phones.compact.join(', ')
-        end
-      end
+      fields :name, :email, :gender, :birth_date, :cpf, :rg, :admin_role, :employee_role, :user_role, :active, :phones, :address, :notes
     end
 
     update do
       fields :name, :email, :password, :password_confirmation, :gender, :birth_date, :cpf, :rg, :admin_role, :employee, :user_role, :active, :notes, :phones, :address
+
+      configure :password do
+        visible do
+          bindings[:view]._current_user.id == bindings[:object].id || bindings[:view]._current_user.ghost_role
+        end
+      end
+
+      configure :password_confirmation do
+        visible do
+          bindings[:view]._current_user.id == bindings[:object].id || bindings[:view]._current_user.ghost_role
+        end
+      end
 
       configure :admin_role do
         visible do
@@ -160,9 +149,6 @@ RailsAdmin.config do |config|
         read_only true
       end
     end
-
-    # show do
-    # end
   end
 
   config.model Service do
@@ -203,17 +189,18 @@ RailsAdmin.config do |config|
 
   config.model Salon do
 
-    list do
-      # virtual field
-      configure :full_address
-      fields :name, :salon_phones, :full_address
+    # virtual field
+    configure :full_address
 
-      configure :salon_phones do
-        pretty_value do
-          phones = bindings[:object].salon_phones.map { |c| [ c.number ] }
-          phones.compact.join(', ')
-        end
+    configure :salon_phones do
+      pretty_value do
+        phones = bindings[:object].salon_phones.map { |c| [ c.number ] }
+        phones.compact.join(', ')
       end
+    end
+
+    list do
+      fields :name, :salon_phones, :full_address
     end
 
     show do
@@ -223,6 +210,10 @@ RailsAdmin.config do |config|
           phones.compact.join(', ')
         end
       end
+    end
+
+    update do
+      exclude_fields :full_address
     end
   end
 

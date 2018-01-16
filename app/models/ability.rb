@@ -6,7 +6,7 @@ class Ability
     #
     user ||= User.new # guest user (not logged in)
 #    can :read, :all                 # allow everyone to read everything
-    if !user.employee.nil? || user.admin_role? || user.ghost_role?
+    if user.admin_role? || user.ghost_role?
       can :access, :rails_admin       # only allow admin users to access Rails Admin
       can :dashboard, :all            # allow access to dashboard
       can :read, [Gender, State, City, District]
@@ -23,11 +23,6 @@ class Ability
       can :manage, [Address, Phone], {user: {ghost_role: false}}
       cannot :history, :all
       cannot :create, [Address, Phone, SalonPhone]
-
-    elsif !user.employee.nil?
-      can :manage, [User], { admin_role: false, ghost_role: false }
-      cannot :history, :all
-
 
     end
 
