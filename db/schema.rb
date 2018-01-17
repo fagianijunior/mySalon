@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180114124716) do
+ActiveRecord::Schema.define(version: 20180116032329) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,24 @@ ActiveRecord::Schema.define(version: 20180114124716) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["city_id"], name: "index_districts_on_city_id"
+  end
+
+  create_table "employee_salons", force: :cascade do |t|
+    t.bigint "employee_id"
+    t.bigint "salon_id"
+    t.time "start_of_expedient"
+    t.time "start_lunch_time"
+    t.time "end_lunch_time"
+    t.time "end_of_expedient"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["employee_id"], name: "index_employee_salons_on_employee_id"
+    t.index ["salon_id"], name: "index_employee_salons_on_salon_id"
+  end
+
+  create_table "employee_salons_weekdays", id: false, force: :cascade do |t|
+    t.bigint "employee_salon_id", null: false
+    t.bigint "weekday_id", null: false
   end
 
   create_table "employee_services", force: :cascade do |t|
@@ -172,12 +190,21 @@ ActiveRecord::Schema.define(version: 20180114124716) do
     t.index ["transaction_id"], name: "index_versions_on_transaction_id"
   end
 
+  create_table "weekdays", force: :cascade do |t|
+    t.string "name"
+    t.string "abbreviation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "addresses", "cities"
   add_foreign_key "addresses", "districts"
   add_foreign_key "addresses", "states"
   add_foreign_key "addresses", "users"
   add_foreign_key "cities", "states"
   add_foreign_key "districts", "cities"
+  add_foreign_key "employee_salons", "employees"
+  add_foreign_key "employee_salons", "salons"
   add_foreign_key "employee_services", "employees"
   add_foreign_key "employee_services", "services"
   add_foreign_key "employees", "users"

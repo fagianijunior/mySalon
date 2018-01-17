@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employee: one
+  salon: one
+  start_of_expedient: 2018-01-16 00:21:46
+  start_lunch_time: 2018-01-16 00:21:46
+  end_lunch_time: 2018-01-16 00:21:46
+  end_of_expedient: 2018-01-16 00:21:46
+
+two:
+  employee: two
+  salon: two
+  start_of_expedient: 2018-01-16 00:21:46
+  start_lunch_time: 2018-01-16 00:21:46
+  end_lunch_time: 2018-01-16 00:21:46
+  end_of_expedient: 2018-01-16 00:21:46

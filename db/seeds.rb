@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Weekday.create([{name:'Domingo', abbreviation:'Dom'},{name:'Segunda', abbreviation:'Seg'},{name:'Terça', abbreviation:'Ter'},{name:'Quarta', abbreviation:'Qua'},{name:'Quinta', abbreviation:'Qui'},{name:'Sexta', abbreviation:'Sex'},{name:'Sábado', abbreviation:'Sab'}])
+
 ce = State.create({name: 'Ceará', abbreviation: 'CE'})
 fortal = City.create({name: 'Fortaleza', state: ce})
 passare = District.create({name: 'Passaré', city: fortal})

@@ -60,21 +60,20 @@ RailsAdmin.config do |config|
     #remove o link do gender
     configure :gender do
       pretty_value do
-        bindings[:object].gender.name
+        value.name
       end
     end
 
     configure :address do
+      active true
+
       pretty_value do
         bindings[:object].address.try(:full_address)
       end
     end
 
     configure :phones do
-      pretty_value do
-        phones = bindings[:object].phones.map { |c| [ c.number ] }
-        phones.compact.join(', ')
-      end
+      active true
     end
 
     list do
@@ -107,10 +106,13 @@ RailsAdmin.config do |config|
       end
 
       configure :employee do
+        active true
+
         visible do
           !bindings[:object].employee.nil?
         end
       end
+
     end
 
     create do
@@ -131,20 +133,28 @@ RailsAdmin.config do |config|
       visible false
     end
 
+    configure :employee_salons do
+      active true
+    end
+
     list do
-      fields :user, :nis, :services
+      fields :user, :nis, :services, :salons
     end
 
     create do
+      exclude_fields :salons
       configure :user_id, :enum do
         enum do
-          User.joins("LEFT OUTER JOIN employees ON employees.user_id = users.id").where("employees.id IS null").map { |c| [ c.name, c.id ] }
+          User.joins("LEFT OUTER JOIN employees ON employees.user_id = users.id").where("employees.id IS null AND users.ghost_role = false").map { |c| [ c.name, c.id ] }
         end
       end
       exclude_fields :user
+
     end
 
     update do
+      exclude_fields :salons
+      
       configure :user do
         read_only true
       end
@@ -188,32 +198,19 @@ RailsAdmin.config do |config|
   end
 
   config.model Salon do
+    configure :employee_salons do
+      visible false
+    end
 
-    # virtual field
-    configure :full_address
-
-    configure :salon_phones do
-      pretty_value do
-        phones = bindings[:object].salon_phones.map { |c| [ c.number ] }
-        phones.compact.join(', ')
+    edit do
+      configure :employees do
+        visible false
       end
-    end
 
-    list do
-      fields :name, :salon_phones, :full_address
-    end
-
-    show do
       configure :salon_phones do
-        pretty_value do
-          phones = bindings[:object].salon_phones.map { |c| [ c.number ] }
-          phones.compact.join(', ')
-        end
+        active true
       end
-    end
 
-    update do
-      exclude_fields :full_address
     end
   end
 
@@ -233,6 +230,9 @@ RailsAdmin.config do |config|
     visible false
   end
 
+  config.model EmployeeSalon do
+  end
+
   config.model State do
     visible false
   end
@@ -246,6 +246,10 @@ RailsAdmin.config do |config|
   end
 
   config.model Gender do
+    visible false
+  end
+
+  config .model Weekday do
     visible false
   end
 end
