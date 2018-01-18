@@ -129,6 +129,7 @@ RailsAdmin.config do |config|
 
   config.model Employee do
     weight -9
+
     configure :employee_services do
       visible false
     end
@@ -142,19 +143,18 @@ RailsAdmin.config do |config|
     end
 
     create do
-      exclude_fields :salons
       configure :user_id, :enum do
         enum do
           User.joins("LEFT OUTER JOIN employees ON employees.user_id = users.id").where("employees.id IS null AND users.ghost_role = false").map { |c| [ c.name, c.id ] }
         end
       end
-      exclude_fields :user
+      exclude_fields :user, :salons
 
     end
 
     update do
       exclude_fields :salons
-      
+
       configure :user do
         read_only true
       end
@@ -162,7 +162,9 @@ RailsAdmin.config do |config|
   end
 
   config.model Service do
-    weight -8
+    weight -10
+    parent Employee
+
     fields :name, :minimum_time, :maximum_time, :price
     configure :employee_services do
       visible false
@@ -171,6 +173,9 @@ RailsAdmin.config do |config|
   end
 
   config.model Address do
+    weight -10
+    parent User
+
     list do
       fields :user, :street, :number, :complement, :district, :zipcode, :state, :city
     end
@@ -187,6 +192,9 @@ RailsAdmin.config do |config|
   end
 
   config.model Phone do
+    weight -9
+    parent User
+
     list do
       fields :user, :number, :telegram, :whatsapp
     end
@@ -198,6 +206,8 @@ RailsAdmin.config do |config|
   end
 
   config.model Salon do
+    weight -8
+
     configure :employee_salons do
       visible false
     end
@@ -215,6 +225,9 @@ RailsAdmin.config do |config|
   end
 
   config.model SalonPhone do
+    weight -10
+    parent Salon
+
     list do
       fields :salon, :number, :telegram, :whatsapp
     end
@@ -227,29 +240,63 @@ RailsAdmin.config do |config|
   end
 
   config.model EmployeeService do
-    visible false
+    weight -9
+    parent Employee
+
+    visible do
+      bindings[:controller].current_user.ghost_role?
+    end
   end
 
   config.model EmployeeSalon do
+    weight -8
+    parent Employee
+
   end
 
   config.model State do
-    visible false
+    weight -10
+    navigation_label 'Miscellaneous'
+
+    visible do
+      bindings[:controller].current_user.ghost_role?
+    end
   end
 
   config.model City do
-    visible false
+    weight -9
+    navigation_label 'Miscellaneous'
+
+    visible do
+      bindings[:controller].current_user.ghost_role?
+    end
   end
 
   config.model District do
-    visible false
+    weight -8
+    navigation_label 'Miscellaneous'
+
+    visible do
+      bindings[:controller].current_user.ghost_role?
+    end
   end
 
   config.model Gender do
-    visible false
+    weight -6
+    
+    navigation_label 'Miscellaneous'
+
+    visible do
+      bindings[:controller].current_user.ghost_role?
+    end
   end
 
   config .model Weekday do
-    visible false
+    weight -7
+    navigation_label 'Miscellaneous'
+
+    visible do
+      bindings[:controller].current_user.ghost_role?
+    end
   end
 end

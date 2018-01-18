@@ -11,6 +11,8 @@ class Salon < ApplicationRecord
 
   has_paper_trail
 
+  validates :name, presence: true, uniqueness: true
+
   def full_address
     [self.street, self.number, self.complement, self.district.name, self.city.name, self.state.name].reject(&:blank?).compact.join(', ')
   end

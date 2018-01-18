@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 20180116032329) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_genders_on_name", unique: true
   end
 
   create_table "phones", force: :cascade do |t|
@@ -132,6 +133,7 @@ ActiveRecord::Schema.define(version: 20180116032329) do
     t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_services_on_name", unique: true
   end
 
   create_table "states", force: :cascade do |t|

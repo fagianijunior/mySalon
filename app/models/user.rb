@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_paper_trail
 
   validates :name, :gender, :cpf, presence: true
+  validates :cpf, :rg, uniqueness: true, allow_blank: true
 
   belongs_to :gender
   has_many :phones, dependent: :destroy, inverse_of: :user
