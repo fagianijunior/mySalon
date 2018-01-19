@@ -32,6 +32,12 @@ ActiveRecord::Schema.define(version: 20180116032329) do
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "cities", force: :cascade do |t|
     t.string "name"
     t.bigint "state_id"
@@ -90,6 +96,12 @@ ActiveRecord::Schema.define(version: 20180116032329) do
     t.index ["name"], name: "index_genders_on_name", unique: true
   end
 
+  create_table "hair_sizes", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "phones", force: :cascade do |t|
     t.bigint "user_id"
     t.string "number"
@@ -128,12 +140,17 @@ ActiveRecord::Schema.define(version: 20180116032329) do
 
   create_table "services", force: :cascade do |t|
     t.string "name"
+    t.bigint "category_id"
+    t.bigint "gender_id"
+    t.bigint "hair_size_id"
     t.time "minimum_time"
     t.time "maximum_time"
     t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_services_on_name", unique: true
+    t.index ["category_id"], name: "index_services_on_category_id"
+    t.index ["gender_id"], name: "index_services_on_gender_id"
+    t.index ["hair_size_id"], name: "index_services_on_hair_size_id"
   end
 
   create_table "states", force: :cascade do |t|
@@ -215,5 +232,8 @@ ActiveRecord::Schema.define(version: 20180116032329) do
   add_foreign_key "salons", "cities"
   add_foreign_key "salons", "districts"
   add_foreign_key "salons", "states"
+  add_foreign_key "services", "categories"
+  add_foreign_key "services", "genders"
+  add_foreign_key "services", "hair_sizes"
   add_foreign_key "users", "genders"
 end

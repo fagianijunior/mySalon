@@ -164,12 +164,21 @@ RailsAdmin.config do |config|
   config.model Service do
     weight -10
     parent Employee
+    object_label_method do
+      :title
+    end
 
-    fields :name, :minimum_time, :maximum_time, :price
+    fields :name, :category, :gender, :hair_size, :minimum_time, :maximum_time, :price
     configure :employee_services do
       visible false
     end
 
+  end
+
+  Service.class_eval do
+    def custom_label_method
+      "#{self.title}"
+    end
   end
 
   config.model Address do
@@ -252,6 +261,9 @@ RailsAdmin.config do |config|
     weight -8
     parent Employee
 
+    visible do
+      bindings[:controller].current_user.ghost_role?
+    end
   end
 
   config.model State do
@@ -283,7 +295,7 @@ RailsAdmin.config do |config|
 
   config.model Gender do
     weight -6
-    
+
     navigation_label 'Miscellaneous'
 
     visible do
@@ -291,12 +303,31 @@ RailsAdmin.config do |config|
     end
   end
 
-  config .model Weekday do
+  config.model Weekday do
     weight -7
     navigation_label 'Miscellaneous'
 
     visible do
       bindings[:controller].current_user.ghost_role?
     end
+  end
+
+  config.model Category do
+    parent Service
+
+    configure :services do
+      read_only true
+    end
+  end
+
+  config.model HairSize do
+    weight -6
+    navigation_label 'Miscellaneous'
+
+
+    visible do
+      bindings[:controller].current_user.ghost_role?
+    end
+
   end
 end

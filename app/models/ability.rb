@@ -9,14 +9,14 @@ class Ability
     if user.admin_role? || user.ghost_role?
       can :access, :rails_admin       # only allow admin users to access Rails Admin
       can :dashboard, :all            # allow access to dashboard
-      can :read, [Gender, State, City, District, Weekday]
+      can :read, [Gender, State, City, District, Weekday, Category, HairSize]
     end
     if user.ghost_role?
       can :manage, :all
       can :history, :all
     elsif user.admin_role?
-      can :create, [State, City, District]
-      can :update, [State, City, District]
+      can :create, [State, City, District, Category]
+      can :update, [State, City, District, Category]
 
       can :manage, [User], ghost_role: false
       can :manage, [Employee, Service, Salon, SalonPhone, EmployeeSalon]

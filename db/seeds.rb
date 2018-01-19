@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Weekday.create([{name:'Domingo', abbreviation:'Dom'},{name:'Segunda', abbreviation:'Seg'},{name:'Terça', abbreviation:'Ter'},{name:'Quarta', abbreviation:'Qua'},{name:'Quinta', abbreviation:'Qui'},{name:'Sexta', abbreviation:'Sex'},{name:'Sábado', abbreviation:'Sab'}])
+HairSize.create([{name: 'Curto'}, {name: 'Médio'}, {name: 'Longo'}])
+Category.create([{name: 'Cabelo'}, {name: 'Manicure'}, {name: 'Depilação'}, {name: 'Estética'}])
 
 ce = State.create({name: 'Ceará', abbreviation: 'CE'})
 fortal = City.create({name: 'Fortaleza', state: ce})
