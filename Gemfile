@@ -19,6 +19,8 @@ gem 'paper_trail', '~> 8.1', '>= 8.1.2'
 gem 'devise', '~> 4.4'
 # Simple authorization solution for Rails. All permissions are stored in a single location.
 gem 'cancancan', '~> 2.1', '>= 2.1.2'
+# Font Custom makes using vector icons easy. Generate icon fonts and supporting templates (e.g. @font-face CSS) from a collection of SVGs.
+gem 'fontcustom', '~> 2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
