@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  schedule: one
+  salon: one
+  employee: one
+  service: one
+
+two:
+  schedule: two
+  salon: two
+  employee: two
+  service: two

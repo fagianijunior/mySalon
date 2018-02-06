@@ -1,2 +1,20 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+
+<h1>Categorias</h1>
+<div class="form-check">
+  <% @categories.each do |category| %>
+    <label class="form-check-label">
+      <%= check_box_tag "category_ids[]", category.id, false, class: 'form-check-input' %>
+      <%= category.name %>
+    </label>
+  <% end %>
+</div>
+
+<div class="row">
+<% @categories.each do |category| %>
+  <div class="col-md-3">
+    <h4><%= category.name %></h4>
+    <%= select_tag('hair_size', options_from_collection_for_select(@hair_sizes, :id, :name), class: "form-control") if category.name == 'Cabelo' %>
+    <%= select_tag('category', options_from_collection_for_select(current_user.gender.services.where(category: category), :id, :title), multiple: true, class: "form-control") %>
+  </div>
+<% end %>
+</div>

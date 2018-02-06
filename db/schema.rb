@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180116032329) do
+ActiveRecord::Schema.define(version: 20180205145935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20180116032329) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
+    t.string "icon"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -138,14 +140,37 @@ ActiveRecord::Schema.define(version: 20180116032329) do
     t.index ["state_id"], name: "index_salons_on_state_id"
   end
 
+  create_table "schedule_services", force: :cascade do |t|
+    t.bigint "schedule_id"
+    t.bigint "salon_id"
+    t.bigint "employee_id"
+    t.bigint "service_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["employee_id"], name: "index_schedule_services_on_employee_id"
+    t.index ["salon_id"], name: "index_schedule_services_on_salon_id"
+    t.index ["schedule_id"], name: "index_schedule_services_on_schedule_id"
+    t.index ["service_id"], name: "index_schedule_services_on_service_id"
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_schedules_on_user_id"
+  end
+
   create_table "services", force: :cascade do |t|
     t.string "name"
+    t.string "icon"
     t.bigint "category_id"
     t.bigint "gender_id"
     t.bigint "hair_size_id"
     t.time "minimum_time"
     t.time "maximum_time"
     t.decimal "price"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_services_on_category_id"
@@ -232,6 +257,11 @@ ActiveRecord::Schema.define(version: 20180116032329) do
   add_foreign_key "salons", "cities"
   add_foreign_key "salons", "districts"
   add_foreign_key "salons", "states"
+  add_foreign_key "schedule_services", "employees"
+  add_foreign_key "schedule_services", "salons"
+  add_foreign_key "schedule_services", "schedules"
+  add_foreign_key "schedule_services", "services"
+  add_foreign_key "schedules", "users"
   add_foreign_key "services", "categories"
   add_foreign_key "services", "genders"
   add_foreign_key "services", "hair_sizes"

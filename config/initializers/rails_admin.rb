@@ -330,4 +330,17 @@ RailsAdmin.config do |config|
     end
 
   end
+
+  config.model Schedule do
+    weight -7
+    parent User
+  end
+  config.model ScheduleService do
+    weight -6
+    parent User
+
+    visible do
+      bindings[:controller].current_user.ghost_role?
+    end
+  end
 end
