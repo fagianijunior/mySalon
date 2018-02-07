@@ -5,4 +5,6 @@ class ScheduleService < ApplicationRecord
   belongs_to :service
 
   has_paper_trail
+
+    validates :schedule, uniqueness:  {scope: [:salon, :employee, :service]}
 end

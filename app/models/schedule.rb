@@ -6,6 +6,5 @@ class Schedule < ApplicationRecord
 
   has_paper_trail
 
-  validates :date, :schedule_service_ids, presence: true
-  validates :cpf, :rg, uniqueness: true, allow_blank: true
+  validates :date, :schedule_services, presence: true
 end

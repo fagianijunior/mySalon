@@ -24,3 +24,15 @@ Phone.create([{user: ghost, number: '85985952866', whatsapp: true},{user: ghost,
 robson = User.create({name: 'Robson Lomonte', gender: g1, cpf:'12345678900', email:'lomonte@lomonte.com.br', password:'123456', password_confirmation:'123456', admin_role:true })
 Address.create({user: robson, zipcode: '60840-115', state: ce, city: fortal, district: messejana, street: 'Rua Joaquim Felício', number: '909'})
 Phone.create({user: robson, number: '85912345678', whatsapp: true})
+
+salao = Salon.create({name: 'Salão um', zipcode: '43321566', state: ce, city: fortal, district: messejana, street: 'Rua dois', number: '344'})
+
+cliente             = User.create({name: 'Cliente um', gender: g1, cpf:'12312312312', email:'clienteum@cliente.com.br', password:'1qaz2wsx', password_confirmation:'1qaz2wsx' })
+usuario_funcionario = User.create({name: 'Funcionario um', gender: g2, cpf:'09876545211', email:'funcionarioum@funcionario.com.br', password:'1qaz2wsx', password_confirmation:'1qaz2wsx' })
+
+corte_masculino = Service.create([{name: 'Corte', category: Category.find_by(name: 'Cabelo'), gender: g1, hair_size: HairSize.find_by(name: 'Curto'), minimum_time: '2000-01-01 00:10:00', maximum_time: '2000-01-01 00:30:00', price: 0.3e2},{name: 'Corte', category: Category.find_by(name: 'Cabelo'), gender: g1, hair_size: HairSize.find_by(name: 'Médio'), minimum_time: '2000-01-01 00:20:00', maximum_time: '2000-01-01 00:40:00', price: 0.3e2},{name: 'Corte', category: Category.find_by(name: 'Cabelo'), gender: g1, hair_size: HairSize.find_by(name: 'Longo'), minimum_time: '2000-01-01 00:30:00', maximum_time: '2000-01-01 00:50:00', price: 0.3e2}])
+
+corte_feminino  = Service.create([{name: 'Corte', category: Category.find_by(name: 'Cabelo'), gender: g2, hair_size: HairSize.find_by(name: 'Curto'), minimum_time: '2000-01-01 00:50:00', maximum_time: '2000-01-01 01:00:00', price: 0.3e2},{name: 'Corte', category: Category.find_by(name: 'Cabelo'), gender: g2, hair_size: HairSize.find_by(name: 'Médio'), minimum_time: '2000-01-01 01:00:00', maximum_time: '2000-01-01 01:20:00', price: 0.3e2},{name: 'Corte', category: Category.find_by(name: 'Cabelo'), gender: g2, hair_size: HairSize.find_by(name: 'Longo'), minimum_time: '2000-01-01 01:10:00', maximum_time: '2000-01-01 01:20:00', price: 0.3e2}])
+
+
+funcionario = Employee.create({user: usuario_funcionario, nis: '567567567567', services: corte_masculino, salons: [salao] })

@@ -21,8 +21,6 @@ gem 'devise', '~> 4.4'
 gem 'cancancan', '~> 2.1', '>= 2.1.2'
 # Font Custom makes using vector icons easy. Generate icon fonts and supporting templates (e.g. @font-face CSS) from a collection of SVGs.
 gem 'fontcustom', '~> 2.0'
-# A set of common locale data and translations to internationalize and/or localize your Rails applications.
-gem 'rails-i18n', '~> 5.0', '>= 5.0.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'

@@ -155,7 +155,7 @@ ActiveRecord::Schema.define(version: 20180205145935) do
 
   create_table "schedules", force: :cascade do |t|
     t.bigint "user_id"
-    t.datetime "data"
+    t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_schedules_on_user_id"

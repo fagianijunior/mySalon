@@ -334,6 +334,10 @@ RailsAdmin.config do |config|
   config.model Schedule do
     weight -7
     parent User
+
+    configure :schedule_services do
+      active true
+    end
   end
   config.model ScheduleService do
     weight -6
