@@ -21,6 +21,8 @@ gem 'devise', '~> 4.4'
 gem 'cancancan', '~> 2.1', '>= 2.1.2'
 # Font Custom makes using vector icons easy. Generate icon fonts and supporting templates (e.g. @font-face CSS) from a collection of SVGs.
 gem 'fontcustom', '~> 2.0'
+# A wonderfully simple calendar gem for Rails
+gem "simple_calendar", "~> 2.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'

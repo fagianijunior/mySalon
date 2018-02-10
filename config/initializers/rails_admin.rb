@@ -324,11 +324,9 @@ RailsAdmin.config do |config|
     weight -6
     navigation_label 'Miscellaneous'
 
-
     visible do
       bindings[:controller].current_user.ghost_role?
     end
-
   end
 
   config.model Schedule do

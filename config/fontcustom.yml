@@ -1,12 +1,12 @@
 # config/fontcustom.yml
 
-font_name: icons
-css_selector: .icon-{{glyph}}
+font_name: mysalon
+css_selector: .mysalon-{{glyph}}
 preprocessor_path: ""
 autowidth: false
 no_hash: true
 force: false
-debug: false
+debug: true
 quiet: false
 
 input:

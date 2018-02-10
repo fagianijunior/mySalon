@@ -1,14 +1,14 @@
 {
   "checksum": {
-    "previous": "4292880f5a7a55cc830d2efb0623f43a2894c277f156ad7ac885f846094ae20e",
-    "current": "4292880f5a7a55cc830d2efb0623f43a2894c277f156ad7ac885f846094ae20e"
+    "previous": "c97e69a4c1e8f2faff47e91b3ff0d38a1d65320b0dd9f1c1cde8f5d895cde297",
+    "current": "c97e69a4c1e8f2faff47e91b3ff0d38a1d65320b0dd9f1c1cde8f5d895cde297"
   },
   "fonts": [
-    "app/assets/fonts/icons.ttf",
-    "app/assets/fonts/icons.svg",
-    "app/assets/fonts/icons.woff",
-    "app/assets/fonts/icons.eot",
-    "app/assets/fonts/icons.woff2"
+    "app/assets/fonts/mysalon.ttf",
+    "app/assets/fonts/mysalon.svg",
+    "app/assets/fonts/mysalon.woff",
+    "app/assets/fonts/mysalon.eot",
+    "app/assets/fonts/mysalon.woff2"
   ],
   "glyphs": {
     "bald-man-head": {
@@ -1163,10 +1163,6 @@
       "codepoint": 61983,
       "source": "app/assets/icons/woman-hair-extended-in-front-of-the-head.svg"
     },
-    "woman-hair-image-in-oval-mirror": {
-      "codepoint": 61984,
-      "source": "app/assets/icons/woman-hair-image-in-oval-mirror.svg"
-    },
     "woman-hair-shape-from-side-view": {
       "codepoint": 61985,
       "source": "app/assets/icons/woman-hair-shape-from-side-view.svg"
@@ -1217,13 +1213,13 @@
     "config": "config/fontcustom.yml",
     "copyright": "",
     "css3": false,
-    "css_selector": ".icon-{{glyph}}",
-    "debug": false,
+    "css_selector": ".mysalon-{{glyph}}",
+    "debug": true,
     "font_ascent": 448,
     "font_descent": 64,
     "font_design_size": 16,
     "font_em": 512,
-    "font_name": "icons",
+    "font_name": "mysalon",
     "force": false,
     "input": {
       "templates": "app/assets/icons",
@@ -1233,7 +1229,7 @@
     "output": {
       "css": "app/assets/stylesheets",
       "fonts": "app/assets/fonts",
-      "preview": "app/assets/fonts"
+      "preview": "app/assets/styleguide"
     },
     "preprocessor_path": "",
     "quiet": false,
@@ -1242,6 +1238,6 @@
     ]
   },
   "templates": [
-    "app/assets/stylesheets/_icons.scss"
+    "app/assets/stylesheets/_mysalon.scss"
   ]
 }

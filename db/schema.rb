@@ -145,6 +145,8 @@ ActiveRecord::Schema.define(version: 20180205145935) do
     t.bigint "salon_id"
     t.bigint "employee_id"
     t.bigint "service_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["employee_id"], name: "index_schedule_services_on_employee_id"
@@ -155,7 +157,7 @@ ActiveRecord::Schema.define(version: 20180205145935) do
 
   create_table "schedules", force: :cascade do |t|
     t.bigint "user_id"
-    t.datetime "date"
+    t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_schedules_on_user_id"

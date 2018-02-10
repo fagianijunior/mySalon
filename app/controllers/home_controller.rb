@@ -5,7 +5,14 @@ class HomeController < ApplicationController
     @salons = Salon.all
     @employees = Employee.all
     @services = Service.all
-    @categories = Category.all
+    @categories = Category.order(:name).all
     @hair_sizes = HairSize.all
+    @schedule_services = ScheduleService.all
+  end
+
+  def show_services
+    respond_to do |format|
+    format.js
+  end
   end
 end

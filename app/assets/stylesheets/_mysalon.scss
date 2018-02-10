@@ -1,0 +1,938 @@
+//
+// Icon Font: mysalon
+//
+
+@font-face {
+  font-family: "mysalon";
+  src: url("mysalon.eot");
+  src: url("mysalon.eot?#iefix") format("embedded-opentype"),
+       url("mysalon.woff2") format("woff2"),
+       url("mysalon.woff") format("woff"),
+       url("mysalon.ttf") format("truetype"),
+       url("mysalon.svg#mysalon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "mysalon";
+    src: url("mysalon.svg#mysalon") format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.mysalon-bald-man-head:before,
+.mysalon-black-hair:before,
+.mysalon-black-long-female-hair-shape:before,
+.mysalon-black-long-hair:before,
+.mysalon-black-short-hair-shape:before,
+.mysalon-boy-hair-outline:before,
+.mysalon-boy-hair-shape:before,
+.mysalon-brush-for-shaving:before,
+.mysalon-brush-silhouette:before,
+.mysalon-brush-tool:before,
+.mysalon-chair-and-mirror-of-hair-salon:before,
+.mysalon-chair-and-sink-tools-for-wash-hair-at-the-salon:before,
+.mysalon-chair-side-view-silhouette:before,
+.mysalon-chair-silhouette:before,
+.mysalon-circular-comb:before,
+.mysalon-close-hair-salon-signal-with-scissors-image-hanging-of-a-nail:before,
+.mysalon-closed-scissors:before,
+.mysalon-comb:before,
+.mysalon-comb-and-long-hair:before,
+.mysalon-comb-and-long-hair-1:before,
+.mysalon-comb-for-curled-hair:before,
+.mysalon-comb-on-long-dark-female-hair:before,
+.mysalon-comb-tool:before,
+.mysalon-comb-tool-for-curled-hair:before,
+.mysalon-comb-tool-for-hair:before,
+.mysalon-comb-variant:before,
+.mysalon-combs-couple:before,
+.mysalon-combs-kit:before,
+.mysalon-commercial-hair-salon-symbol-of-circular-shape:before,
+.mysalon-curled-black-long-female-hair-shape:before,
+.mysalon-curled-short-black-hair-shape:before,
+.mysalon-curler-hair-tool:before,
+.mysalon-curlers-hair-salon-tools:before,
+.mysalon-dark-female-hair-shape:before,
+.mysalon-elastic-circles-for-hair:before,
+.mysalon-elegant-mirror:before,
+.mysalon-female-black-hair:before,
+.mysalon-female-black-hair-shape:before,
+.mysalon-female-black-hair-shape-1:before,
+.mysalon-female-black-long-hair-shape:before,
+.mysalon-female-black-short-hair-shape-at-one-side:before,
+.mysalon-female-dark-long-hair-shape-of-juvenile-style:before,
+.mysalon-female-hair:before,
+.mysalon-female-hair-covered-with-a-cap:before,
+.mysalon-female-hair-cut-with-scissors:before,
+.mysalon-female-hair-salon-symbol:before,
+.mysalon-female-hair-shape:before,
+.mysalon-female-hair-shape-1:before,
+.mysalon-female-hair-shape-and-face-silhouette:before,
+.mysalon-female-hair-style:before,
+.mysalon-female-hair-with-hat:before,
+.mysalon-female-hairs:before,
+.mysalon-female-head:before,
+.mysalon-female-head-silhouette:before,
+.mysalon-female-head-silhouette-from-side-view-with-short-hair-style-cut:before,
+.mysalon-female-head-silhouette-of-short-hair:before,
+.mysalon-female-head-silhouette-with-ponytail:before,
+.mysalon-female-head-with-big-hair-shape-on-it:before,
+.mysalon-female-head-with-ponytail:before,
+.mysalon-female-long-dark-hair-wig:before,
+.mysalon-female-long-hair:before,
+.mysalon-female-long-hair-1:before,
+.mysalon-female-long-hair-with-ponytails:before,
+.mysalon-female-short-hair:before,
+.mysalon-female-short-hair-on-head-silhouette:before,
+.mysalon-female-short-hair-style-silhouette:before,
+.mysalon-female-wig:before,
+.mysalon-fen-and-chair-hair-salon-tools:before,
+.mysalon-foam-hair-salon-tool:before,
+.mysalon-four-scissors-in-a-badge:before,
+.mysalon-geisha-hair-shape:before,
+.mysalon-gel-container-for-hair:before,
+.mysalon-hair:before,
+.mysalon-hair-bottles-in-a-circle:before,
+.mysalon-hair-brush:before,
+.mysalon-hair-brushes:before,
+.mysalon-hair-care-tube:before,
+.mysalon-hair-clips:before,
+.mysalon-hair-curler:before,
+.mysalon-hair-in-mirror:before,
+.mysalon-hair-salon-badge:before,
+.mysalon-hair-salon-badge-1:before,
+.mysalon-hair-salon-badge-2:before,
+.mysalon-hair-salon-badge-circle-with-three-bottles:before,
+.mysalon-hair-salon-badge-with-scissors:before,
+.mysalon-hair-salon-badge-with-scissors-and-mustache:before,
+.mysalon-hair-salon-commercial-circular-symbol:before,
+.mysalon-hair-salon-commercial-signal:before,
+.mysalon-hair-salon-fen-silhouette:before,
+.mysalon-hair-salon-funnel:before,
+.mysalon-hair-salon-male-symbol:before,
+.mysalon-hair-salon-mustache-circular-symbol:before,
+.mysalon-hair-salon-situation:before,
+.mysalon-hair-salon-situation-1:before,
+.mysalon-hair-salon-situation-2:before,
+.mysalon-hair-salon-situation-of-two-persons:before,
+.mysalon-hair-salon-spray-bottle-and-can:before,
+.mysalon-hair-salon-spray-bottle-silhouette:before,
+.mysalon-hair-salon-spray-bottles:before,
+.mysalon-hair-salon-tool:before,
+.mysalon-hair-salon-tool-black-shape:before,
+.mysalon-hair-salon-tube-black-container-shape-side-view:before,
+.mysalon-hair-shape:before,
+.mysalon-hair-shape-1:before,
+.mysalon-hair-shape-2:before,
+.mysalon-hair-short-black-shape:before,
+.mysalon-hair-straightener:before,
+.mysalon-hair-straightener-1:before,
+.mysalon-hair-straightener-on-long-female-hair:before,
+.mysalon-hair-straighter-and-hair-curler:before,
+.mysalon-hair-style-badge:before,
+.mysalon-hair-style-badge-1:before,
+.mysalon-hair-style-badge-2:before,
+.mysalon-hair-style-badge-3:before,
+.mysalon-hair-style-badge-for-commercial-salon:before,
+.mysalon-hair-style-badge-for-female-hair-salon:before,
+.mysalon-hair-style-badge-with-a-mustache:before,
+.mysalon-hair-style-badge-with-a-scissor-and-banner:before,
+.mysalon-hair-style-badge-with-combs:before,
+.mysalon-hair-style-for-gentlemen:before,
+.mysalon-hair-style-medal:before,
+.mysalon-hair-style-salon-circular-badge:before,
+.mysalon-hair-style-shape:before,
+.mysalon-hair-style-shop-badge-with-a-mustache-shape:before,
+.mysalon-hair-style-shop-signal:before,
+.mysalon-hair-style-signal-circle-with-scissor:before,
+.mysalon-hair-style-silhouette:before,
+.mysalon-hair-with-a-hat:before,
+.mysalon-hairdresser:before,
+.mysalon-hairdresser-1:before,
+.mysalon-hairdresser-applying-hair-dye-to-a-client-of-hair-salon:before,
+.mysalon-hairdresser-covering-client-head-with-foam:before,
+.mysalon-hairdresser-drying-the-hair-of-a-client-sitting-on-a-chair-in-front-of-him:before,
+.mysalon-hairdresser-eyeglasses-mustache-and-scissors:before,
+.mysalon-hairdresser-showing-a-mirror-to-the-client:before,
+.mysalon-hairdresser-standing-with-a-hair-straightener-behind-the-client-sitting-on-a-chair:before,
+.mysalon-hairdresser-washing-the-hair-of-a-client-with-bubbles-shampoo:before,
+.mysalon-hairdresser-with-comb-and-scissors:before,
+.mysalon-hairdresser-with-combs:before,
+.mysalon-hairdresser-with-hairdryer:before,
+.mysalon-hairdresser-with-scissors-cutting-the-hair-to-a-client-sitting-in-front-of-him:before,
+.mysalon-hairdresser-with-spray-bottle-behind-the-client-of-hair-salon:before,
+.mysalon-hairdresser-with-spray-bottle-behind-the-client-of-the-salon:before,
+.mysalon-hairdresser-with-tools-for-hair-in-his-hands:before,
+.mysalon-hairdryer-and-comb:before,
+.mysalon-hairdryer-silhouette:before,
+.mysalon-hairdryer-silhouette-side-view:before,
+.mysalon-hairstyle:before,
+.mysalon-hairstyle-with-one-short-side-and-the-other-long:before,
+.mysalon-hairstylist-with-scissors-and-spray-bottle-in-hands:before,
+.mysalon-head-silhouette-with-short-hair:before,
+.mysalon-heads-hairs-and-scissors:before,
+.mysalon-human-hair-shape:before,
+.mysalon-human-male-hairs-of-the-head:before,
+.mysalon-irregular-dark-hair-shape:before,
+.mysalon-juvenile-female-hair-with-two-ponytails-hanging-at-both-sides:before,
+.mysalon-liquid-soap-container-bottle-black-silhouette-side-view:before,
+.mysalon-long-dark-female-hair-shape:before,
+.mysalon-long-dark-female-hair-shape-1:before,
+.mysalon-long-dark-female-juvenile-wig:before,
+.mysalon-long-female-dark-hair:before,
+.mysalon-long-female-hair:before,
+.mysalon-long-female-hair-1:before,
+.mysalon-long-female-hair-and-hair-curler:before,
+.mysalon-long-female-hair-image-on-oval-mirror:before,
+.mysalon-long-female-hair-shape-at-one-side:before,
+.mysalon-long-female-hair-tincture:before,
+.mysalon-long-female-hair-wig-shape:before,
+.mysalon-long-hair-dark-shape:before,
+.mysalon-long-hair-wig:before,
+.mysalon-long-hair-with-a-hat:before,
+.mysalon-long-thin-comb-tool:before,
+.mysalon-long-young-female-hair:before,
+.mysalon-male-dark-short-hair-shape:before,
+.mysalon-male-hair-of-head-and-face-shapes:before,
+.mysalon-male-hair-of-the-head:before,
+.mysalon-male-hair-on-man-head-side-silhouette:before,
+.mysalon-male-hair-salon:before,
+.mysalon-male-hair-style-shop:before,
+.mysalon-male-head-hair-and-beard:before,
+.mysalon-male-head-with-hair:before,
+.mysalon-male-long-hair-with-hat:before,
+.mysalon-male-short-black-hair-shape:before,
+.mysalon-male-short-black-hair-shape-1:before,
+.mysalon-male-short-hair:before,
+.mysalon-male-short-hair-wig-shape:before,
+.mysalon-male-wig:before,
+.mysalon-man-and-shaver:before,
+.mysalon-man-hair-shape-on-head-side-view-silhouette:before,
+.mysalon-man-head-and-a-shaver:before,
+.mysalon-man-head-with-a-hat-side-view-silhouette:before,
+.mysalon-mirror-of-oval-shape:before,
+.mysalon-mirror-of-oval-shape-1:before,
+.mysalon-mirror-oval-shape:before,
+.mysalon-mirror-rectangle:before,
+.mysalon-mustache-and-beard-black-shapes:before,
+.mysalon-mustache-hair-salon-symbol:before,
+.mysalon-mustache-in-a-circle:before,
+.mysalon-mustache-shape:before,
+.mysalon-mustache-shape-in-a-square:before,
+.mysalon-one-comb:before,
+.mysalon-open-hair-salon-signal:before,
+.mysalon-open-scissors:before,
+.mysalon-opened-scissors-variant:before,
+.mysalon-oval-hair-salon-mirror-with-ornamental-border:before,
+.mysalon-oval-mirror-of-hair-salon:before,
+.mysalon-oval-vertical-mirror:before,
+.mysalon-pets-hair-salon-tools-kit:before,
+.mysalon-ponytail-hair:before,
+.mysalon-professional-hair-treatment-with-creams-and-heating-standing-hairdryer:before,
+.mysalon-punk-male-head-side-view-silhouette:before,
+.mysalon-punk-male-silhouette:before,
+.mysalon-punk-man-head-silhouette:before,
+.mysalon-razor:before,
+.mysalon-razor-hair-salon-tool:before,
+.mysalon-razor-to-cut-hairs:before,
+.mysalon-razor-tool-black-silhouette-of-the-tool-to-cut-male-hair:before,
+.mysalon-razor-tools:before,
+.mysalon-razors:before,
+.mysalon-rectangular-mirror:before,
+.mysalon-scissor-and-comb:before,
+.mysalon-scissors:before,
+.mysalon-scissors-1:before,
+.mysalon-scissors-2:before,
+.mysalon-scissors-3:before,
+.mysalon-scissors-4:before,
+.mysalon-scissors-5:before,
+.mysalon-scissors-6:before,
+.mysalon-scissors-and-comb:before,
+.mysalon-scissors-and-comb-1:before,
+.mysalon-scissors-and-comb-2:before,
+.mysalon-scissors-badge:before,
+.mysalon-scissors-couple-in-hair-salon-badge:before,
+.mysalon-scissors-cutting-hair:before,
+.mysalon-scissors-cutting-long-hair:before,
+.mysalon-scissors-in-a-hair-salon-badge:before,
+.mysalon-scissors-kit:before,
+.mysalon-scissors-opened-tool:before,
+.mysalon-scissors-opened-tool-shape:before,
+.mysalon-scissors-variant:before,
+.mysalon-shampoo-application-in-hair-salon:before,
+.mysalon-shaver:before,
+.mysalon-shaver-electrical-tool-front-view:before,
+.mysalon-shaving-male-head-silhouette:before,
+.mysalon-short-black-hair:before,
+.mysalon-short-black-hair-shape:before,
+.mysalon-short-black-hair-shape-1:before,
+.mysalon-short-black-hair-wig-shape:before,
+.mysalon-short-black-irregular-hair-shape:before,
+.mysalon-short-dark-female-hair-shape:before,
+.mysalon-short-dark-hair:before,
+.mysalon-short-dark-hair-1:before,
+.mysalon-short-dark-hair-shape:before,
+.mysalon-short-dark-hair-shape-1:before,
+.mysalon-short-dark-hair-shape-of-human-head:before,
+.mysalon-short-dark-hair-wig:before,
+.mysalon-short-dark-human-hair:before,
+.mysalon-short-dark-male-hair-shape:before,
+.mysalon-short-dark-male-hair-shape-1:before,
+.mysalon-short-dark-male-hair-shape-2:before,
+.mysalon-short-female-dark-hair-shape:before,
+.mysalon-short-female-hair-on-side-view-woman-head-silhouette:before,
+.mysalon-short-hair:before,
+.mysalon-short-hair-1:before,
+.mysalon-short-hair-2:before,
+.mysalon-short-hair-and-scissors:before,
+.mysalon-short-hair-black-shape:before,
+.mysalon-short-hair-of-rounded-external-shape:before,
+.mysalon-short-hair-on-female-head-silhouette:before,
+.mysalon-short-hair-shape:before,
+.mysalon-short-hair-shape-1:before,
+.mysalon-short-hair-shape-2:before,
+.mysalon-short-hair-shape-3:before,
+.mysalon-short-hair-shape-reflex-on-a-rectangular-mirror-of-hair-salon:before,
+.mysalon-short-hairstyle:before,
+.mysalon-short-male-hair-shape:before,
+.mysalon-short-male-hair-shape-1:before,
+.mysalon-spang-hair-salon-tool:before,
+.mysalon-spang-hair-tool-outline:before,
+.mysalon-spray-bottle-hair-salon-tool-silhouette:before,
+.mysalon-spray-bottles:before,
+.mysalon-standing-hairdryer:before,
+.mysalon-three-bottles-of-hair-salon:before,
+.mysalon-wig-black-hair:before,
+.mysalon-woman-hair:before,
+.mysalon-woman-hair-black-shape:before,
+.mysalon-woman-hair-cut:before,
+.mysalon-woman-hair-extended-in-front-of-the-head:before,
+.mysalon-woman-hair-shape-from-side-view:before,
+.mysalon-woman-head-side-silhouette:before,
+.mysalon-woman-head-side-view:before,
+.mysalon-woman-head-side-view-silhouette:before,
+.mysalon-woman-head-silhouette-with-short-curled-hair-style:before,
+.mysalon-woman-head-silhouette-with-short-hair:before,
+.mysalon-woman-head-with-short-hair-silhouette:before,
+.mysalon-woman-silhouette-head-side-view:before,
+.mysalon-woman-sitting-waiting-on-a-hair-salon-chair-observing-the-wall-clock:before,
+.mysalon-woman-with-long-hair:before,
+.mysalon-young-male-short-irregular-hair-on-head-and-a-small-beard:before {
+  display: inline-block;
+  font-family: "mysalon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.mysalon-bald-man-head:before { content: "\f100"; }
+.mysalon-black-hair:before { content: "\f101"; }
+.mysalon-black-long-female-hair-shape:before { content: "\f102"; }
+.mysalon-black-long-hair:before { content: "\f103"; }
+.mysalon-black-short-hair-shape:before { content: "\f104"; }
+.mysalon-boy-hair-outline:before { content: "\f105"; }
+.mysalon-boy-hair-shape:before { content: "\f106"; }
+.mysalon-brush-for-shaving:before { content: "\f107"; }
+.mysalon-brush-silhouette:before { content: "\f108"; }
+.mysalon-brush-tool:before { content: "\f109"; }
+.mysalon-chair-and-mirror-of-hair-salon:before { content: "\f10a"; }
+.mysalon-chair-and-sink-tools-for-wash-hair-at-the-salon:before { content: "\f10b"; }
+.mysalon-chair-side-view-silhouette:before { content: "\f10c"; }
+.mysalon-chair-silhouette:before { content: "\f10d"; }
+.mysalon-circular-comb:before { content: "\f10e"; }
+.mysalon-close-hair-salon-signal-with-scissors-image-hanging-of-a-nail:before { content: "\f10f"; }
+.mysalon-closed-scissors:before { content: "\f110"; }
+.mysalon-comb:before { content: "\f111"; }
+.mysalon-comb-and-long-hair:before { content: "\f112"; }
+.mysalon-comb-and-long-hair-1:before { content: "\f113"; }
+.mysalon-comb-for-curled-hair:before { content: "\f114"; }
+.mysalon-comb-on-long-dark-female-hair:before { content: "\f115"; }
+.mysalon-comb-tool:before { content: "\f116"; }
+.mysalon-comb-tool-for-curled-hair:before { content: "\f117"; }
+.mysalon-comb-tool-for-hair:before { content: "\f118"; }
+.mysalon-comb-variant:before { content: "\f119"; }
+.mysalon-combs-couple:before { content: "\f11a"; }
+.mysalon-combs-kit:before { content: "\f11b"; }
+.mysalon-commercial-hair-salon-symbol-of-circular-shape:before { content: "\f11c"; }
+.mysalon-curled-black-long-female-hair-shape:before { content: "\f11d"; }
+.mysalon-curled-short-black-hair-shape:before { content: "\f11e"; }
+.mysalon-curler-hair-tool:before { content: "\f11f"; }
+.mysalon-curlers-hair-salon-tools:before { content: "\f120"; }
+.mysalon-dark-female-hair-shape:before { content: "\f121"; }
+.mysalon-elastic-circles-for-hair:before { content: "\f122"; }
+.mysalon-elegant-mirror:before { content: "\f123"; }
+.mysalon-female-black-hair:before { content: "\f124"; }
+.mysalon-female-black-hair-shape:before { content: "\f125"; }
+.mysalon-female-black-hair-shape-1:before { content: "\f126"; }
+.mysalon-female-black-long-hair-shape:before { content: "\f127"; }
+.mysalon-female-black-short-hair-shape-at-one-side:before { content: "\f128"; }
+.mysalon-female-dark-long-hair-shape-of-juvenile-style:before { content: "\f129"; }
+.mysalon-female-hair:before { content: "\f12a"; }
+.mysalon-female-hair-covered-with-a-cap:before { content: "\f12b"; }
+.mysalon-female-hair-cut-with-scissors:before { content: "\f12c"; }
+.mysalon-female-hair-salon-symbol:before { content: "\f12d"; }
+.mysalon-female-hair-shape:before { content: "\f12e"; }
+.mysalon-female-hair-shape-1:before { content: "\f12f"; }
+.mysalon-female-hair-shape-and-face-silhouette:before { content: "\f130"; }
+.mysalon-female-hair-style:before { content: "\f131"; }
+.mysalon-female-hair-with-hat:before { content: "\f132"; }
+.mysalon-female-hairs:before { content: "\f133"; }
+.mysalon-female-head:before { content: "\f134"; }
+.mysalon-female-head-silhouette:before { content: "\f135"; }
+.mysalon-female-head-silhouette-from-side-view-with-short-hair-style-cut:before { content: "\f136"; }
+.mysalon-female-head-silhouette-of-short-hair:before { content: "\f137"; }
+.mysalon-female-head-silhouette-with-ponytail:before { content: "\f138"; }
+.mysalon-female-head-with-big-hair-shape-on-it:before { content: "\f139"; }
+.mysalon-female-head-with-ponytail:before { content: "\f13a"; }
+.mysalon-female-long-dark-hair-wig:before { content: "\f13b"; }
+.mysalon-female-long-hair:before { content: "\f13c"; }
+.mysalon-female-long-hair-1:before { content: "\f13d"; }
+.mysalon-female-long-hair-with-ponytails:before { content: "\f13e"; }
+.mysalon-female-short-hair:before { content: "\f13f"; }
+.mysalon-female-short-hair-on-head-silhouette:before { content: "\f140"; }
+.mysalon-female-short-hair-style-silhouette:before { content: "\f141"; }
+.mysalon-female-wig:before { content: "\f142"; }
+.mysalon-fen-and-chair-hair-salon-tools:before { content: "\f143"; }
+.mysalon-foam-hair-salon-tool:before { content: "\f144"; }
+.mysalon-four-scissors-in-a-badge:before { content: "\f145"; }
+.mysalon-geisha-hair-shape:before { content: "\f146"; }
+.mysalon-gel-container-for-hair:before { content: "\f147"; }
+.mysalon-hair:before { content: "\f148"; }
+.mysalon-hair-bottles-in-a-circle:before { content: "\f149"; }
+.mysalon-hair-brush:before { content: "\f14a"; }
+.mysalon-hair-brushes:before { content: "\f14b"; }
+.mysalon-hair-care-tube:before { content: "\f14c"; }
+.mysalon-hair-clips:before { content: "\f14d"; }
+.mysalon-hair-curler:before { content: "\f14e"; }
+.mysalon-hair-in-mirror:before { content: "\f14f"; }
+.mysalon-hair-salon-badge:before { content: "\f150"; }
+.mysalon-hair-salon-badge-1:before { content: "\f151"; }
+.mysalon-hair-salon-badge-2:before { content: "\f152"; }
+.mysalon-hair-salon-badge-circle-with-three-bottles:before { content: "\f153"; }
+.mysalon-hair-salon-badge-with-scissors:before { content: "\f154"; }
+.mysalon-hair-salon-badge-with-scissors-and-mustache:before { content: "\f155"; }
+.mysalon-hair-salon-commercial-circular-symbol:before { content: "\f156"; }
+.mysalon-hair-salon-commercial-signal:before { content: "\f157"; }
+.mysalon-hair-salon-fen-silhouette:before { content: "\f158"; }
+.mysalon-hair-salon-funnel:before { content: "\f159"; }
+.mysalon-hair-salon-male-symbol:before { content: "\f15a"; }
+.mysalon-hair-salon-mustache-circular-symbol:before { content: "\f15b"; }
+.mysalon-hair-salon-situation:before { content: "\f15c"; }
+.mysalon-hair-salon-situation-1:before { content: "\f15d"; }
+.mysalon-hair-salon-situation-2:before { content: "\f15e"; }
+.mysalon-hair-salon-situation-of-two-persons:before { content: "\f15f"; }
+.mysalon-hair-salon-spray-bottle-and-can:before { content: "\f160"; }
+.mysalon-hair-salon-spray-bottle-silhouette:before { content: "\f161"; }
+.mysalon-hair-salon-spray-bottles:before { content: "\f162"; }
+.mysalon-hair-salon-tool:before { content: "\f163"; }
+.mysalon-hair-salon-tool-black-shape:before { content: "\f164"; }
+.mysalon-hair-salon-tube-black-container-shape-side-view:before { content: "\f165"; }
+.mysalon-hair-shape:before { content: "\f166"; }
+.mysalon-hair-shape-1:before { content: "\f167"; }
+.mysalon-hair-shape-2:before { content: "\f168"; }
+.mysalon-hair-short-black-shape:before { content: "\f169"; }
+.mysalon-hair-straightener:before { content: "\f16a"; }
+.mysalon-hair-straightener-1:before { content: "\f16b"; }
+.mysalon-hair-straightener-on-long-female-hair:before { content: "\f16c"; }
+.mysalon-hair-straighter-and-hair-curler:before { content: "\f16d"; }
+.mysalon-hair-style-badge:before { content: "\f16e"; }
+.mysalon-hair-style-badge-1:before { content: "\f16f"; }
+.mysalon-hair-style-badge-2:before { content: "\f170"; }
+.mysalon-hair-style-badge-3:before { content: "\f171"; }
+.mysalon-hair-style-badge-for-commercial-salon:before { content: "\f172"; }
+.mysalon-hair-style-badge-for-female-hair-salon:before { content: "\f173"; }
+.mysalon-hair-style-badge-with-a-mustache:before { content: "\f174"; }
+.mysalon-hair-style-badge-with-a-scissor-and-banner:before { content: "\f175"; }
+.mysalon-hair-style-badge-with-combs:before { content: "\f176"; }
+.mysalon-hair-style-for-gentlemen:before { content: "\f177"; }
+.mysalon-hair-style-medal:before { content: "\f178"; }
+.mysalon-hair-style-salon-circular-badge:before { content: "\f179"; }
+.mysalon-hair-style-shape:before { content: "\f17a"; }
+.mysalon-hair-style-shop-badge-with-a-mustache-shape:before { content: "\f17b"; }
+.mysalon-hair-style-shop-signal:before { content: "\f17c"; }
+.mysalon-hair-style-signal-circle-with-scissor:before { content: "\f17d"; }
+.mysalon-hair-style-silhouette:before { content: "\f17e"; }
+.mysalon-hair-with-a-hat:before { content: "\f17f"; }
+.mysalon-hairdresser:before { content: "\f180"; }
+.mysalon-hairdresser-1:before { content: "\f181"; }
+.mysalon-hairdresser-applying-hair-dye-to-a-client-of-hair-salon:before { content: "\f182"; }
+.mysalon-hairdresser-covering-client-head-with-foam:before { content: "\f183"; }
+.mysalon-hairdresser-drying-the-hair-of-a-client-sitting-on-a-chair-in-front-of-him:before { content: "\f184"; }
+.mysalon-hairdresser-eyeglasses-mustache-and-scissors:before { content: "\f185"; }
+.mysalon-hairdresser-showing-a-mirror-to-the-client:before { content: "\f186"; }
+.mysalon-hairdresser-standing-with-a-hair-straightener-behind-the-client-sitting-on-a-chair:before { content: "\f187"; }
+.mysalon-hairdresser-washing-the-hair-of-a-client-with-bubbles-shampoo:before { content: "\f188"; }
+.mysalon-hairdresser-with-comb-and-scissors:before { content: "\f189"; }
+.mysalon-hairdresser-with-combs:before { content: "\f18a"; }
+.mysalon-hairdresser-with-hairdryer:before { content: "\f18b"; }
+.mysalon-hairdresser-with-scissors-cutting-the-hair-to-a-client-sitting-in-front-of-him:before { content: "\f18c"; }
+.mysalon-hairdresser-with-spray-bottle-behind-the-client-of-hair-salon:before { content: "\f18d"; }
+.mysalon-hairdresser-with-spray-bottle-behind-the-client-of-the-salon:before { content: "\f18e"; }
+.mysalon-hairdresser-with-tools-for-hair-in-his-hands:before { content: "\f18f"; }
+.mysalon-hairdryer-and-comb:before { content: "\f190"; }
+.mysalon-hairdryer-silhouette:before { content: "\f191"; }
+.mysalon-hairdryer-silhouette-side-view:before { content: "\f192"; }
+.mysalon-hairstyle:before { content: "\f193"; }
+.mysalon-hairstyle-with-one-short-side-and-the-other-long:before { content: "\f194"; }
+.mysalon-hairstylist-with-scissors-and-spray-bottle-in-hands:before { content: "\f195"; }
+.mysalon-head-silhouette-with-short-hair:before { content: "\f196"; }
+.mysalon-heads-hairs-and-scissors:before { content: "\f197"; }
+.mysalon-human-hair-shape:before { content: "\f198"; }
+.mysalon-human-male-hairs-of-the-head:before { content: "\f199"; }
+.mysalon-irregular-dark-hair-shape:before { content: "\f19a"; }
+.mysalon-juvenile-female-hair-with-two-ponytails-hanging-at-both-sides:before { content: "\f19b"; }
+.mysalon-liquid-soap-container-bottle-black-silhouette-side-view:before { content: "\f19c"; }
+.mysalon-long-dark-female-hair-shape:before { content: "\f19d"; }
+.mysalon-long-dark-female-hair-shape-1:before { content: "\f19e"; }
+.mysalon-long-dark-female-juvenile-wig:before { content: "\f19f"; }
+.mysalon-long-female-dark-hair:before { content: "\f1a0"; }
+.mysalon-long-female-hair:before { content: "\f1a1"; }
+.mysalon-long-female-hair-1:before { content: "\f1a2"; }
+.mysalon-long-female-hair-and-hair-curler:before { content: "\f1a3"; }
+.mysalon-long-female-hair-image-on-oval-mirror:before { content: "\f1a4"; }
+.mysalon-long-female-hair-shape-at-one-side:before { content: "\f1a5"; }
+.mysalon-long-female-hair-tincture:before { content: "\f1a6"; }
+.mysalon-long-female-hair-wig-shape:before { content: "\f1a7"; }
+.mysalon-long-hair-dark-shape:before { content: "\f1a8"; }
+.mysalon-long-hair-wig:before { content: "\f1a9"; }
+.mysalon-long-hair-with-a-hat:before { content: "\f1aa"; }
+.mysalon-long-thin-comb-tool:before { content: "\f1ab"; }
+.mysalon-long-young-female-hair:before { content: "\f1ac"; }
+.mysalon-male-dark-short-hair-shape:before { content: "\f1ad"; }
+.mysalon-male-hair-of-head-and-face-shapes:before { content: "\f1ae"; }
+.mysalon-male-hair-of-the-head:before { content: "\f1af"; }
+.mysalon-male-hair-on-man-head-side-silhouette:before { content: "\f1b0"; }
+.mysalon-male-hair-salon:before { content: "\f1b1"; }
+.mysalon-male-hair-style-shop:before { content: "\f1b2"; }
+.mysalon-male-head-hair-and-beard:before { content: "\f1b3"; }
+.mysalon-male-head-with-hair:before { content: "\f1b4"; }
+.mysalon-male-long-hair-with-hat:before { content: "\f1b5"; }
+.mysalon-male-short-black-hair-shape:before { content: "\f1b6"; }
+.mysalon-male-short-black-hair-shape-1:before { content: "\f1b7"; }
+.mysalon-male-short-hair:before { content: "\f1b8"; }
+.mysalon-male-short-hair-wig-shape:before { content: "\f1b9"; }
+.mysalon-male-wig:before { content: "\f1ba"; }
+.mysalon-man-and-shaver:before { content: "\f1bb"; }
+.mysalon-man-hair-shape-on-head-side-view-silhouette:before { content: "\f1bc"; }
+.mysalon-man-head-and-a-shaver:before { content: "\f1bd"; }
+.mysalon-man-head-with-a-hat-side-view-silhouette:before { content: "\f1be"; }
+.mysalon-mirror-of-oval-shape:before { content: "\f1bf"; }
+.mysalon-mirror-of-oval-shape-1:before { content: "\f1c0"; }
+.mysalon-mirror-oval-shape:before { content: "\f1c1"; }
+.mysalon-mirror-rectangle:before { content: "\f1c2"; }
+.mysalon-mustache-and-beard-black-shapes:before { content: "\f1c3"; }
+.mysalon-mustache-hair-salon-symbol:before { content: "\f1c4"; }
+.mysalon-mustache-in-a-circle:before { content: "\f1c5"; }
+.mysalon-mustache-shape:before { content: "\f1c6"; }
+.mysalon-mustache-shape-in-a-square:before { content: "\f1c7"; }
+.mysalon-one-comb:before { content: "\f1c8"; }
+.mysalon-open-hair-salon-signal:before { content: "\f1c9"; }
+.mysalon-open-scissors:before { content: "\f1ca"; }
+.mysalon-opened-scissors-variant:before { content: "\f1cb"; }
+.mysalon-oval-hair-salon-mirror-with-ornamental-border:before { content: "\f1cc"; }
+.mysalon-oval-mirror-of-hair-salon:before { content: "\f1cd"; }
+.mysalon-oval-vertical-mirror:before { content: "\f1ce"; }
+.mysalon-pets-hair-salon-tools-kit:before { content: "\f1cf"; }
+.mysalon-ponytail-hair:before { content: "\f1d0"; }
+.mysalon-professional-hair-treatment-with-creams-and-heating-standing-hairdryer:before { content: "\f1d1"; }
+.mysalon-punk-male-head-side-view-silhouette:before { content: "\f1d2"; }
+.mysalon-punk-male-silhouette:before { content: "\f1d3"; }
+.mysalon-punk-man-head-silhouette:before { content: "\f1d4"; }
+.mysalon-razor:before { content: "\f1d5"; }
+.mysalon-razor-hair-salon-tool:before { content: "\f1d6"; }
+.mysalon-razor-to-cut-hairs:before { content: "\f1d7"; }
+.mysalon-razor-tool-black-silhouette-of-the-tool-to-cut-male-hair:before { content: "\f1d8"; }
+.mysalon-razor-tools:before { content: "\f1d9"; }
+.mysalon-razors:before { content: "\f1da"; }
+.mysalon-rectangular-mirror:before { content: "\f1db"; }
+.mysalon-scissor-and-comb:before { content: "\f1dc"; }
+.mysalon-scissors:before { content: "\f1dd"; }
+.mysalon-scissors-1:before { content: "\f1de"; }
+.mysalon-scissors-2:before { content: "\f1df"; }
+.mysalon-scissors-3:before { content: "\f1e0"; }
+.mysalon-scissors-4:before { content: "\f1e1"; }
+.mysalon-scissors-5:before { content: "\f1e2"; }
+.mysalon-scissors-6:before { content: "\f1e3"; }
+.mysalon-scissors-and-comb:before { content: "\f1e4"; }
+.mysalon-scissors-and-comb-1:before { content: "\f1e5"; }
+.mysalon-scissors-and-comb-2:before { content: "\f1e6"; }
+.mysalon-scissors-badge:before { content: "\f1e7"; }
+.mysalon-scissors-couple-in-hair-salon-badge:before { content: "\f1e8"; }
+.mysalon-scissors-cutting-hair:before { content: "\f1e9"; }
+.mysalon-scissors-cutting-long-hair:before { content: "\f1ea"; }
+.mysalon-scissors-in-a-hair-salon-badge:before { content: "\f1eb"; }
+.mysalon-scissors-kit:before { content: "\f1ec"; }
+.mysalon-scissors-opened-tool:before { content: "\f1ed"; }
+.mysalon-scissors-opened-tool-shape:before { content: "\f1ee"; }
+.mysalon-scissors-variant:before { content: "\f1ef"; }
+.mysalon-shampoo-application-in-hair-salon:before { content: "\f1f0"; }
+.mysalon-shaver:before { content: "\f1f1"; }
+.mysalon-shaver-electrical-tool-front-view:before { content: "\f1f2"; }
+.mysalon-shaving-male-head-silhouette:before { content: "\f1f3"; }
+.mysalon-short-black-hair:before { content: "\f1f4"; }
+.mysalon-short-black-hair-shape:before { content: "\f1f5"; }
+.mysalon-short-black-hair-shape-1:before { content: "\f1f6"; }
+.mysalon-short-black-hair-wig-shape:before { content: "\f1f7"; }
+.mysalon-short-black-irregular-hair-shape:before { content: "\f1f8"; }
+.mysalon-short-dark-female-hair-shape:before { content: "\f1f9"; }
+.mysalon-short-dark-hair:before { content: "\f1fa"; }
+.mysalon-short-dark-hair-1:before { content: "\f1fb"; }
+.mysalon-short-dark-hair-shape:before { content: "\f1fc"; }
+.mysalon-short-dark-hair-shape-1:before { content: "\f1fd"; }
+.mysalon-short-dark-hair-shape-of-human-head:before { content: "\f1fe"; }
+.mysalon-short-dark-hair-wig:before { content: "\f1ff"; }
+.mysalon-short-dark-human-hair:before { content: "\f200"; }
+.mysalon-short-dark-male-hair-shape:before { content: "\f201"; }
+.mysalon-short-dark-male-hair-shape-1:before { content: "\f202"; }
+.mysalon-short-dark-male-hair-shape-2:before { content: "\f203"; }
+.mysalon-short-female-dark-hair-shape:before { content: "\f204"; }
+.mysalon-short-female-hair-on-side-view-woman-head-silhouette:before { content: "\f205"; }
+.mysalon-short-hair:before { content: "\f206"; }
+.mysalon-short-hair-1:before { content: "\f207"; }
+.mysalon-short-hair-2:before { content: "\f208"; }
+.mysalon-short-hair-and-scissors:before { content: "\f209"; }
+.mysalon-short-hair-black-shape:before { content: "\f20a"; }
+.mysalon-short-hair-of-rounded-external-shape:before { content: "\f20b"; }
+.mysalon-short-hair-on-female-head-silhouette:before { content: "\f20c"; }
+.mysalon-short-hair-shape:before { content: "\f20d"; }
+.mysalon-short-hair-shape-1:before { content: "\f20e"; }
+.mysalon-short-hair-shape-2:before { content: "\f20f"; }
+.mysalon-short-hair-shape-3:before { content: "\f210"; }
+.mysalon-short-hair-shape-reflex-on-a-rectangular-mirror-of-hair-salon:before { content: "\f211"; }
+.mysalon-short-hairstyle:before { content: "\f212"; }
+.mysalon-short-male-hair-shape:before { content: "\f213"; }
+.mysalon-short-male-hair-shape-1:before { content: "\f214"; }
+.mysalon-spang-hair-salon-tool:before { content: "\f215"; }
+.mysalon-spang-hair-tool-outline:before { content: "\f216"; }
+.mysalon-spray-bottle-hair-salon-tool-silhouette:before { content: "\f217"; }
+.mysalon-spray-bottles:before { content: "\f218"; }
+.mysalon-standing-hairdryer:before { content: "\f219"; }
+.mysalon-three-bottles-of-hair-salon:before { content: "\f21a"; }
+.mysalon-wig-black-hair:before { content: "\f21b"; }
+.mysalon-woman-hair:before { content: "\f21c"; }
+.mysalon-woman-hair-black-shape:before { content: "\f21d"; }
+.mysalon-woman-hair-cut:before { content: "\f21e"; }
+.mysalon-woman-hair-extended-in-front-of-the-head:before { content: "\f21f"; }
+.mysalon-woman-hair-shape-from-side-view:before { content: "\f221"; }
+.mysalon-woman-head-side-silhouette:before { content: "\f222"; }
+.mysalon-woman-head-side-view:before { content: "\f223"; }
+.mysalon-woman-head-side-view-silhouette:before { content: "\f224"; }
+.mysalon-woman-head-silhouette-with-short-curled-hair-style:before { content: "\f225"; }
+.mysalon-woman-head-silhouette-with-short-hair:before { content: "\f226"; }
+.mysalon-woman-head-with-short-hair-silhouette:before { content: "\f227"; }
+.mysalon-woman-silhouette-head-side-view:before { content: "\f228"; }
+.mysalon-woman-sitting-waiting-on-a-hair-salon-chair-observing-the-wall-clock:before { content: "\f229"; }
+.mysalon-woman-with-long-hair:before { content: "\f22a"; }
+.mysalon-young-male-short-irregular-hair-on-head-and-a-small-beard:before { content: "\f22b"; }
+
+$font-mysalon-bald-man-head: "\f100";
+$font-mysalon-black-hair: "\f101";
+$font-mysalon-black-long-female-hair-shape: "\f102";
+$font-mysalon-black-long-hair: "\f103";
+$font-mysalon-black-short-hair-shape: "\f104";
+$font-mysalon-boy-hair-outline: "\f105";
+$font-mysalon-boy-hair-shape: "\f106";
+$font-mysalon-brush-for-shaving: "\f107";
+$font-mysalon-brush-silhouette: "\f108";
+$font-mysalon-brush-tool: "\f109";
+$font-mysalon-chair-and-mirror-of-hair-salon: "\f10a";
+$font-mysalon-chair-and-sink-tools-for-wash-hair-at-the-salon: "\f10b";
+$font-mysalon-chair-side-view-silhouette: "\f10c";
+$font-mysalon-chair-silhouette: "\f10d";
+$font-mysalon-circular-comb: "\f10e";
+$font-mysalon-close-hair-salon-signal-with-scissors-image-hanging-of-a-nail: "\f10f";
+$font-mysalon-closed-scissors: "\f110";
+$font-mysalon-comb: "\f111";
+$font-mysalon-comb-and-long-hair: "\f112";
+$font-mysalon-comb-and-long-hair-1: "\f113";
+$font-mysalon-comb-for-curled-hair: "\f114";
+$font-mysalon-comb-on-long-dark-female-hair: "\f115";
+$font-mysalon-comb-tool: "\f116";
+$font-mysalon-comb-tool-for-curled-hair: "\f117";
+$font-mysalon-comb-tool-for-hair: "\f118";
+$font-mysalon-comb-variant: "\f119";
+$font-mysalon-combs-couple: "\f11a";
+$font-mysalon-combs-kit: "\f11b";
+$font-mysalon-commercial-hair-salon-symbol-of-circular-shape: "\f11c";
+$font-mysalon-curled-black-long-female-hair-shape: "\f11d";
+$font-mysalon-curled-short-black-hair-shape: "\f11e";
+$font-mysalon-curler-hair-tool: "\f11f";
+$font-mysalon-curlers-hair-salon-tools: "\f120";
+$font-mysalon-dark-female-hair-shape: "\f121";
+$font-mysalon-elastic-circles-for-hair: "\f122";
+$font-mysalon-elegant-mirror: "\f123";
+$font-mysalon-female-black-hair: "\f124";
+$font-mysalon-female-black-hair-shape: "\f125";
+$font-mysalon-female-black-hair-shape-1: "\f126";
+$font-mysalon-female-black-long-hair-shape: "\f127";
+$font-mysalon-female-black-short-hair-shape-at-one-side: "\f128";
+$font-mysalon-female-dark-long-hair-shape-of-juvenile-style: "\f129";
+$font-mysalon-female-hair: "\f12a";
+$font-mysalon-female-hair-covered-with-a-cap: "\f12b";
+$font-mysalon-female-hair-cut-with-scissors: "\f12c";
+$font-mysalon-female-hair-salon-symbol: "\f12d";
+$font-mysalon-female-hair-shape: "\f12e";
+$font-mysalon-female-hair-shape-1: "\f12f";
+$font-mysalon-female-hair-shape-and-face-silhouette: "\f130";
+$font-mysalon-female-hair-style: "\f131";
+$font-mysalon-female-hair-with-hat: "\f132";
+$font-mysalon-female-hairs: "\f133";
+$font-mysalon-female-head: "\f134";
+$font-mysalon-female-head-silhouette: "\f135";
+$font-mysalon-female-head-silhouette-from-side-view-with-short-hair-style-cut: "\f136";
+$font-mysalon-female-head-silhouette-of-short-hair: "\f137";
+$font-mysalon-female-head-silhouette-with-ponytail: "\f138";
+$font-mysalon-female-head-with-big-hair-shape-on-it: "\f139";
+$font-mysalon-female-head-with-ponytail: "\f13a";
+$font-mysalon-female-long-dark-hair-wig: "\f13b";
+$font-mysalon-female-long-hair: "\f13c";
+$font-mysalon-female-long-hair-1: "\f13d";
+$font-mysalon-female-long-hair-with-ponytails: "\f13e";
+$font-mysalon-female-short-hair: "\f13f";
+$font-mysalon-female-short-hair-on-head-silhouette: "\f140";
+$font-mysalon-female-short-hair-style-silhouette: "\f141";
+$font-mysalon-female-wig: "\f142";
+$font-mysalon-fen-and-chair-hair-salon-tools: "\f143";
+$font-mysalon-foam-hair-salon-tool: "\f144";
+$font-mysalon-four-scissors-in-a-badge: "\f145";
+$font-mysalon-geisha-hair-shape: "\f146";
+$font-mysalon-gel-container-for-hair: "\f147";
+$font-mysalon-hair: "\f148";
+$font-mysalon-hair-bottles-in-a-circle: "\f149";
+$font-mysalon-hair-brush: "\f14a";
+$font-mysalon-hair-brushes: "\f14b";
+$font-mysalon-hair-care-tube: "\f14c";
+$font-mysalon-hair-clips: "\f14d";
+$font-mysalon-hair-curler: "\f14e";
+$font-mysalon-hair-in-mirror: "\f14f";
+$font-mysalon-hair-salon-badge: "\f150";
+$font-mysalon-hair-salon-badge-1: "\f151";
+$font-mysalon-hair-salon-badge-2: "\f152";
+$font-mysalon-hair-salon-badge-circle-with-three-bottles: "\f153";
+$font-mysalon-hair-salon-badge-with-scissors: "\f154";
+$font-mysalon-hair-salon-badge-with-scissors-and-mustache: "\f155";
+$font-mysalon-hair-salon-commercial-circular-symbol: "\f156";
+$font-mysalon-hair-salon-commercial-signal: "\f157";
+$font-mysalon-hair-salon-fen-silhouette: "\f158";
+$font-mysalon-hair-salon-funnel: "\f159";
+$font-mysalon-hair-salon-male-symbol: "\f15a";
+$font-mysalon-hair-salon-mustache-circular-symbol: "\f15b";
+$font-mysalon-hair-salon-situation: "\f15c";
+$font-mysalon-hair-salon-situation-1: "\f15d";
+$font-mysalon-hair-salon-situation-2: "\f15e";
+$font-mysalon-hair-salon-situation-of-two-persons: "\f15f";
+$font-mysalon-hair-salon-spray-bottle-and-can: "\f160";
+$font-mysalon-hair-salon-spray-bottle-silhouette: "\f161";
+$font-mysalon-hair-salon-spray-bottles: "\f162";
+$font-mysalon-hair-salon-tool: "\f163";
+$font-mysalon-hair-salon-tool-black-shape: "\f164";
+$font-mysalon-hair-salon-tube-black-container-shape-side-view: "\f165";
+$font-mysalon-hair-shape: "\f166";
+$font-mysalon-hair-shape-1: "\f167";
+$font-mysalon-hair-shape-2: "\f168";
+$font-mysalon-hair-short-black-shape: "\f169";
+$font-mysalon-hair-straightener: "\f16a";
+$font-mysalon-hair-straightener-1: "\f16b";
+$font-mysalon-hair-straightener-on-long-female-hair: "\f16c";
+$font-mysalon-hair-straighter-and-hair-curler: "\f16d";
+$font-mysalon-hair-style-badge: "\f16e";
+$font-mysalon-hair-style-badge-1: "\f16f";
+$font-mysalon-hair-style-badge-2: "\f170";
+$font-mysalon-hair-style-badge-3: "\f171";
+$font-mysalon-hair-style-badge-for-commercial-salon: "\f172";
+$font-mysalon-hair-style-badge-for-female-hair-salon: "\f173";
+$font-mysalon-hair-style-badge-with-a-mustache: "\f174";
+$font-mysalon-hair-style-badge-with-a-scissor-and-banner: "\f175";
+$font-mysalon-hair-style-badge-with-combs: "\f176";
+$font-mysalon-hair-style-for-gentlemen: "\f177";
+$font-mysalon-hair-style-medal: "\f178";
+$font-mysalon-hair-style-salon-circular-badge: "\f179";
+$font-mysalon-hair-style-shape: "\f17a";
+$font-mysalon-hair-style-shop-badge-with-a-mustache-shape: "\f17b";
+$font-mysalon-hair-style-shop-signal: "\f17c";
+$font-mysalon-hair-style-signal-circle-with-scissor: "\f17d";
+$font-mysalon-hair-style-silhouette: "\f17e";
+$font-mysalon-hair-with-a-hat: "\f17f";
+$font-mysalon-hairdresser: "\f180";
+$font-mysalon-hairdresser-1: "\f181";
+$font-mysalon-hairdresser-applying-hair-dye-to-a-client-of-hair-salon: "\f182";
+$font-mysalon-hairdresser-covering-client-head-with-foam: "\f183";
+$font-mysalon-hairdresser-drying-the-hair-of-a-client-sitting-on-a-chair-in-front-of-him: "\f184";
+$font-mysalon-hairdresser-eyeglasses-mustache-and-scissors: "\f185";
+$font-mysalon-hairdresser-showing-a-mirror-to-the-client: "\f186";
+$font-mysalon-hairdresser-standing-with-a-hair-straightener-behind-the-client-sitting-on-a-chair: "\f187";
+$font-mysalon-hairdresser-washing-the-hair-of-a-client-with-bubbles-shampoo: "\f188";
+$font-mysalon-hairdresser-with-comb-and-scissors: "\f189";
+$font-mysalon-hairdresser-with-combs: "\f18a";
+$font-mysalon-hairdresser-with-hairdryer: "\f18b";
+$font-mysalon-hairdresser-with-scissors-cutting-the-hair-to-a-client-sitting-in-front-of-him: "\f18c";
+$font-mysalon-hairdresser-with-spray-bottle-behind-the-client-of-hair-salon: "\f18d";
+$font-mysalon-hairdresser-with-spray-bottle-behind-the-client-of-the-salon: "\f18e";
+$font-mysalon-hairdresser-with-tools-for-hair-in-his-hands: "\f18f";
+$font-mysalon-hairdryer-and-comb: "\f190";
+$font-mysalon-hairdryer-silhouette: "\f191";
+$font-mysalon-hairdryer-silhouette-side-view: "\f192";
+$font-mysalon-hairstyle: "\f193";
+$font-mysalon-hairstyle-with-one-short-side-and-the-other-long: "\f194";
+$font-mysalon-hairstylist-with-scissors-and-spray-bottle-in-hands: "\f195";
+$font-mysalon-head-silhouette-with-short-hair: "\f196";
+$font-mysalon-heads-hairs-and-scissors: "\f197";
+$font-mysalon-human-hair-shape: "\f198";
+$font-mysalon-human-male-hairs-of-the-head: "\f199";
+$font-mysalon-irregular-dark-hair-shape: "\f19a";
+$font-mysalon-juvenile-female-hair-with-two-ponytails-hanging-at-both-sides: "\f19b";
+$font-mysalon-liquid-soap-container-bottle-black-silhouette-side-view: "\f19c";
+$font-mysalon-long-dark-female-hair-shape: "\f19d";
+$font-mysalon-long-dark-female-hair-shape-1: "\f19e";
+$font-mysalon-long-dark-female-juvenile-wig: "\f19f";
+$font-mysalon-long-female-dark-hair: "\f1a0";
+$font-mysalon-long-female-hair: "\f1a1";
+$font-mysalon-long-female-hair-1: "\f1a2";
+$font-mysalon-long-female-hair-and-hair-curler: "\f1a3";
+$font-mysalon-long-female-hair-image-on-oval-mirror: "\f1a4";
+$font-mysalon-long-female-hair-shape-at-one-side: "\f1a5";
+$font-mysalon-long-female-hair-tincture: "\f1a6";
+$font-mysalon-long-female-hair-wig-shape: "\f1a7";
+$font-mysalon-long-hair-dark-shape: "\f1a8";
+$font-mysalon-long-hair-wig: "\f1a9";
+$font-mysalon-long-hair-with-a-hat: "\f1aa";
+$font-mysalon-long-thin-comb-tool: "\f1ab";
+$font-mysalon-long-young-female-hair: "\f1ac";
+$font-mysalon-male-dark-short-hair-shape: "\f1ad";
+$font-mysalon-male-hair-of-head-and-face-shapes: "\f1ae";
+$font-mysalon-male-hair-of-the-head: "\f1af";
+$font-mysalon-male-hair-on-man-head-side-silhouette: "\f1b0";
+$font-mysalon-male-hair-salon: "\f1b1";
+$font-mysalon-male-hair-style-shop: "\f1b2";
+$font-mysalon-male-head-hair-and-beard: "\f1b3";
+$font-mysalon-male-head-with-hair: "\f1b4";
+$font-mysalon-male-long-hair-with-hat: "\f1b5";
+$font-mysalon-male-short-black-hair-shape: "\f1b6";
+$font-mysalon-male-short-black-hair-shape-1: "\f1b7";
+$font-mysalon-male-short-hair: "\f1b8";
+$font-mysalon-male-short-hair-wig-shape: "\f1b9";
+$font-mysalon-male-wig: "\f1ba";
+$font-mysalon-man-and-shaver: "\f1bb";
+$font-mysalon-man-hair-shape-on-head-side-view-silhouette: "\f1bc";
+$font-mysalon-man-head-and-a-shaver: "\f1bd";
+$font-mysalon-man-head-with-a-hat-side-view-silhouette: "\f1be";
+$font-mysalon-mirror-of-oval-shape: "\f1bf";
+$font-mysalon-mirror-of-oval-shape-1: "\f1c0";
+$font-mysalon-mirror-oval-shape: "\f1c1";
+$font-mysalon-mirror-rectangle: "\f1c2";
+$font-mysalon-mustache-and-beard-black-shapes: "\f1c3";
+$font-mysalon-mustache-hair-salon-symbol: "\f1c4";
+$font-mysalon-mustache-in-a-circle: "\f1c5";
+$font-mysalon-mustache-shape: "\f1c6";
+$font-mysalon-mustache-shape-in-a-square: "\f1c7";
+$font-mysalon-one-comb: "\f1c8";
+$font-mysalon-open-hair-salon-signal: "\f1c9";
+$font-mysalon-open-scissors: "\f1ca";
+$font-mysalon-opened-scissors-variant: "\f1cb";
+$font-mysalon-oval-hair-salon-mirror-with-ornamental-border: "\f1cc";
+$font-mysalon-oval-mirror-of-hair-salon: "\f1cd";
+$font-mysalon-oval-vertical-mirror: "\f1ce";
+$font-mysalon-pets-hair-salon-tools-kit: "\f1cf";
+$font-mysalon-ponytail-hair: "\f1d0";
+$font-mysalon-professional-hair-treatment-with-creams-and-heating-standing-hairdryer: "\f1d1";
+$font-mysalon-punk-male-head-side-view-silhouette: "\f1d2";
+$font-mysalon-punk-male-silhouette: "\f1d3";
+$font-mysalon-punk-man-head-silhouette: "\f1d4";
+$font-mysalon-razor: "\f1d5";
+$font-mysalon-razor-hair-salon-tool: "\f1d6";
+$font-mysalon-razor-to-cut-hairs: "\f1d7";
+$font-mysalon-razor-tool-black-silhouette-of-the-tool-to-cut-male-hair: "\f1d8";
+$font-mysalon-razor-tools: "\f1d9";
+$font-mysalon-razors: "\f1da";
+$font-mysalon-rectangular-mirror: "\f1db";
+$font-mysalon-scissor-and-comb: "\f1dc";
+$font-mysalon-scissors: "\f1dd";
+$font-mysalon-scissors-1: "\f1de";
+$font-mysalon-scissors-2: "\f1df";
+$font-mysalon-scissors-3: "\f1e0";
+$font-mysalon-scissors-4: "\f1e1";
+$font-mysalon-scissors-5: "\f1e2";
+$font-mysalon-scissors-6: "\f1e3";
+$font-mysalon-scissors-and-comb: "\f1e4";
+$font-mysalon-scissors-and-comb-1: "\f1e5";
+$font-mysalon-scissors-and-comb-2: "\f1e6";
+$font-mysalon-scissors-badge: "\f1e7";
+$font-mysalon-scissors-couple-in-hair-salon-badge: "\f1e8";
+$font-mysalon-scissors-cutting-hair: "\f1e9";
+$font-mysalon-scissors-cutting-long-hair: "\f1ea";
+$font-mysalon-scissors-in-a-hair-salon-badge: "\f1eb";
+$font-mysalon-scissors-kit: "\f1ec";
+$font-mysalon-scissors-opened-tool: "\f1ed";
+$font-mysalon-scissors-opened-tool-shape: "\f1ee";
+$font-mysalon-scissors-variant: "\f1ef";
+$font-mysalon-shampoo-application-in-hair-salon: "\f1f0";
+$font-mysalon-shaver: "\f1f1";
+$font-mysalon-shaver-electrical-tool-front-view: "\f1f2";
+$font-mysalon-shaving-male-head-silhouette: "\f1f3";
+$font-mysalon-short-black-hair: "\f1f4";
+$font-mysalon-short-black-hair-shape: "\f1f5";
+$font-mysalon-short-black-hair-shape-1: "\f1f6";
+$font-mysalon-short-black-hair-wig-shape: "\f1f7";
+$font-mysalon-short-black-irregular-hair-shape: "\f1f8";
+$font-mysalon-short-dark-female-hair-shape: "\f1f9";
+$font-mysalon-short-dark-hair: "\f1fa";
+$font-mysalon-short-dark-hair-1: "\f1fb";
+$font-mysalon-short-dark-hair-shape: "\f1fc";
+$font-mysalon-short-dark-hair-shape-1: "\f1fd";
+$font-mysalon-short-dark-hair-shape-of-human-head: "\f1fe";
+$font-mysalon-short-dark-hair-wig: "\f1ff";
+$font-mysalon-short-dark-human-hair: "\f200";
+$font-mysalon-short-dark-male-hair-shape: "\f201";
+$font-mysalon-short-dark-male-hair-shape-1: "\f202";
+$font-mysalon-short-dark-male-hair-shape-2: "\f203";
+$font-mysalon-short-female-dark-hair-shape: "\f204";
+$font-mysalon-short-female-hair-on-side-view-woman-head-silhouette: "\f205";
+$font-mysalon-short-hair: "\f206";
+$font-mysalon-short-hair-1: "\f207";
+$font-mysalon-short-hair-2: "\f208";
+$font-mysalon-short-hair-and-scissors: "\f209";
+$font-mysalon-short-hair-black-shape: "\f20a";
+$font-mysalon-short-hair-of-rounded-external-shape: "\f20b";
+$font-mysalon-short-hair-on-female-head-silhouette: "\f20c";
+$font-mysalon-short-hair-shape: "\f20d";
+$font-mysalon-short-hair-shape-1: "\f20e";
+$font-mysalon-short-hair-shape-2: "\f20f";
+$font-mysalon-short-hair-shape-3: "\f210";
+$font-mysalon-short-hair-shape-reflex-on-a-rectangular-mirror-of-hair-salon: "\f211";
+$font-mysalon-short-hairstyle: "\f212";
+$font-mysalon-short-male-hair-shape: "\f213";
+$font-mysalon-short-male-hair-shape-1: "\f214";
+$font-mysalon-spang-hair-salon-tool: "\f215";
+$font-mysalon-spang-hair-tool-outline: "\f216";
+$font-mysalon-spray-bottle-hair-salon-tool-silhouette: "\f217";
+$font-mysalon-spray-bottles: "\f218";
+$font-mysalon-standing-hairdryer: "\f219";
+$font-mysalon-three-bottles-of-hair-salon: "\f21a";
+$font-mysalon-wig-black-hair: "\f21b";
+$font-mysalon-woman-hair: "\f21c";
+$font-mysalon-woman-hair-black-shape: "\f21d";
+$font-mysalon-woman-hair-cut: "\f21e";
+$font-mysalon-woman-hair-extended-in-front-of-the-head: "\f21f";
+$font-mysalon-woman-hair-shape-from-side-view: "\f221";
+$font-mysalon-woman-head-side-silhouette: "\f222";
+$font-mysalon-woman-head-side-view: "\f223";
+$font-mysalon-woman-head-side-view-silhouette: "\f224";
+$font-mysalon-woman-head-silhouette-with-short-curled-hair-style: "\f225";
+$font-mysalon-woman-head-silhouette-with-short-hair: "\f226";
+$font-mysalon-woman-head-with-short-hair-silhouette: "\f227";
+$font-mysalon-woman-silhouette-head-side-view: "\f228";
+$font-mysalon-woman-sitting-waiting-on-a-hair-salon-chair-observing-the-wall-clock: "\f229";
+$font-mysalon-woman-with-long-hair: "\f22a";
+$font-mysalon-young-male-short-irregular-hair-on-head-and-a-small-beard: "\f22b";
