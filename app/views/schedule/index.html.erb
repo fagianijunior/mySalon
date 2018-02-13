@@ -1,0 +1,8 @@
+<% @schedules.each do |schedule| %>
+  <%= schedule.date %><br>
+  <% schedule.schedule_services.each do |schedule_service| %>
+    <%= schedule_service.name %>
+  <% end %>
+<% end %>
+
+<%= link_to 'Add new Schedule', new_schedule_path %>

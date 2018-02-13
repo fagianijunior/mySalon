@@ -168,7 +168,7 @@ RailsAdmin.config do |config|
       :title
     end
 
-    fields :name, :category, :gender, :hair_size, :minimum_time, :maximum_time, :price
+    fields :name, :icon, :category, :gender, :hair_size, :minimum_time, :maximum_time, :price
     configure :employee_services do
       visible false
     end

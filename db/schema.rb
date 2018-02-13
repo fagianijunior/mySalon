@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20180205145935) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.string "icon"
+    t.boolean "has_size", default: false, null: false
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -99,6 +100,7 @@ ActiveRecord::Schema.define(version: 20180205145935) do
   end
 
   create_table "hair_sizes", force: :cascade do |t|
+    t.string "icon"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

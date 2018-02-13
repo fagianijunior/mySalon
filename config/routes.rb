@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  resources :schedule
   root to: 'home#index'
+  
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     passwords: 'users/passwords',
