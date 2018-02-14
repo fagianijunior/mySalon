@@ -1,5 +1,6 @@
 class Service < ApplicationRecord
   has_many :employee_services, inverse_of: :service
+  has_many :employee, through: :employee_services
   belongs_to :category, inverse_of: :services
   belongs_to :gender, inverse_of: :services
   belongs_to :hair_size, optional: true
@@ -8,6 +9,6 @@ class Service < ApplicationRecord
   validates :name, :minimum_time, :maximum_time, :price, presence: true
 
   def title
-    "#{self.try(:name)} #{self.category.try(:name)} #{self.hair_size.try(:name)} #{self.gender.try(:name)}"
+    "#{self.try(:name)} #{self.category.try(:name)} #{self.hair_size.try(:name)}"
   end
 end

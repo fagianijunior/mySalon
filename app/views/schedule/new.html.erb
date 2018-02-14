@@ -1,49 +1,52 @@
 <div class="row">
   <div class="col-md-12">
-    <button onclick="back()"><< Voltar</button><p class="pull-right">Próximo >></p>
     <div class="progress" style="width: 100%">
       <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
   </div>
-  <div class="col-md-12 "id="categories">
-    <div class="row">
-      <% @categories.each do |category| %>
-        <div class="col-md-12">
-          <div class="row well" style="cursor: pointer;" onclick="showServices(<%= category.id %>)">
-            <div class="col-md-2">
-              <i class="<%= category.icon %>" style="font-size:70px"></i>
-            </div>
-            <div class="col-md-10">
-              <h3><%= category.name %></h3>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
+  <div class="col-md-12">
+    <button class="btn btn-primary" id="back" disabled><< Voltar</button>
   </div>
+  <div class="col-md-12">
+    <br>
+  </div>
+</div>
+
+<div class="row" id="categories-box">
   <% @categories.each do |category| %>
-    <div class="col-md-12 well" id="category-<%= category.id %>" hidden>
-      <h1><i class="<%= category.icon %>" style="font-size:50px"></i> <%= category.name %></h1>
+    <div class="col-md-12">
+      <button type="button" class="btn btn-primary btn-lg btn-block category" id='category-<%= category.id%>' style="font-size: 40px;">
+        <i class="<%= category.icon %>" style="font-size:70px"></i> <%= category.name %>
+      </button>
+      <br>
+    </div>
+  <% end %>
+</div>
+
+<div class="row" id="services-box" hidden>
+  <% @categories.each do |category| %>
+    <div class="col-md-12 well category-<%= category.id %>">
       <div class="row">
         <div class="col-md-12">
-          <div class="row">
-            <%= label_tag "hair_size" if category.has_size %>
-            <%= select_tag("Hair Size", options_from_collection_for_select(@hair_sizes, :id, :name),
-              class: "form-control", id: "hair-sizes", name: "hair_size",
-              prompt: "Selecione o tamanho do corte...", onChange: "selectHairSize()") if category.has_size
-            %>
-            <hr>
-          </div>
+          <h1><i class="<%= category.icon %>" style="font-size:50px"></i> <%= category.name %></h1>
         </div>
+        <div class="col-md-12">
+          <%= label_tag "hair_size" if category.has_size %>
+          <%= select_tag("Hair Size", options_from_collection_for_select(@hair_sizes, :id, :name),
+            class: "form-control", id: "hair-sizes", prompt: "Select your hair size...") if category.has_size
+          %>
+          <hr>
+        </div>
+      </div>
+      <div class="row" id="services">
         <% category.services.where(gender: current_user.gender).each do |service| %>
-          <div class="col-md-4 well hair-size hair-size-<%= service.hair_size.id %>" hidden>
-            <div class="row">
-              <div class="col-md-4">
-                <i class="<%= service.icon || 'mysalon-open-scissors' %>" style="font-size:40px;"></i>
-              </div>
-              <div class="col-md-7">
-                <%= service.title %><br>
-              </div>
+          <div class='col-md-4<%= category.has_size? ? " hair-size-#{service.hair_size.id}" : "" %>' style="margin-bottom: 20px;">
+            <button type="button" class="btn btn-primary btn-lg btn-block service" id='<%= service.id %>' style="font-size: 20px; white-space: normal;">
+              <i class="<%= service.icon || 'mysalon-open-scissors' %>" style="font-size:40px;"></i><BR><%= service.title %>
+            </button>
+            <div class="employees">
+              <%= select_tag("Employees", options_for_select(service.employee),
+              class: "form-control employees", prompt: "Select the preferred professional...") %>
             </div>
           </div>
         <% end %>
@@ -52,81 +55,56 @@
   <% end %>
 </div>
 
-<script type="text/javascript">
-
-  function back() {
-    $('.progress-bar').width('0%').attr('aria-valuenow', '0%');
-    $('#categories').show();
-    $('#category-1').hide();
-    $('#category-2').hide();
-    $('#category-3').hide();
-    $('#category-4').hide();
-  }
-  function showServices(id) {
-    $('#categories').toggle();
-    $('#category-'+id).toggle();
-    $('.progress-bar').width('50%').attr('aria-valuenow', '50%');
-  }
-
-  function selectHairSize() {
-    let hair_sizes = $('#hair-sizes');
-    $('.hair-size').hide();
-    $(hair_sizes).each(function() {
-      $('.hair-size-'+hair_sizes.val()).show();
-    });
-  }
-</script>
-
-
-<!--
-
-<h1>Categories</h1>
-<div class="form-check">
-    <label class="form-check-label">
-
-    </label>
-</div>
-
 <div class="row">
-  <% @categories.each do |category| %>
-    <div class="col-md-3" id="category-<%= category.id %>">
-      <h4><%= category.name %></h4>
-      <%= select_tag('hair_size', options_from_collection_for_select(@hair_sizes, :id, :name), class: "form-control") if category.name == 'Cabelo' %>
-      <%= select_tag('category', options_from_collection_for_select(@services.where(gender: current_user.gender).where(category: category), :id, :title), multiple: true, class: "form-control") %>
-    </div>
-  <% end %>
+  <div class="col-md-12">
+  </div>
+
 </div>
 
-<%= month_calendar events: @schedule_services do |date, schedule_services| %>
-  <%= date %>
-  <% schedule_services.each do |schedule_service| %>
-    <div style="font-size: 12px; width: 110px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden;">
-      <%= schedule_service.start_time.strftime('%H:%M') %> - Ocupado<br>
-    </div>
-  <% end %>
-<% end %>
-<br>
-<%= week_calendar number_of_weeks: 2 do |date| %>
-  <%= date %>
-<% end %>
-<br>
-<%= calendar number_of_days: 1, events: @schedule_services do |date, schedule_services| %>
-  <%= date %>
-  <% schedule_services.each do |schedule_service| %>
-    <div>
-      <%= schedule_service.start_time.strftime('%H:%M') %> -
-      <%= schedule_service.service.title %> -
-      <%= schedule_service.schedule.user.name %>
-    </div>
-  <% end %>
-<% end %>
-
 <script type="text/javascript">
-  angular.module('mySalonApp', [])
-    .controller('scheduleCtrl', function() {
-      var scope = this;
-      scope.teste = "asdasdas";
 
-      scope.showServices()
-    })
-</script> -->
+  var $stage = '';
+
+  $('.service').click(function() {
+
+    console.log(this.id);
+
+  })
+
+  // Escolhe categoria
+  $('.category').click(function() {
+    // exibe os servicos da categoria, sobe um estagio, esconde a box das categorias, habilita o botao voltar, esconde todos os outros boxes
+    let $el = $('.' + this.id).fadeIn(450);
+    $stage = 'services-box';
+    $('#categories-box').hide();
+    $('#back').prop('disabled', false);
+    $('#services-box').fadeIn(450);
+    $('#services-box > div').not($el).hide();
+  })
+
+  // Escolha tamanho cabelo
+  $('#hair-sizes').on('change', function() {
+    if (this.value == '') {
+      $('#services > div').fadeIn(450);
+    } else {
+      let $el = $('#services > .hair-size-' + this.value).fadeIn(450);
+      $('#services > div').not($el).hide();
+    }
+  })
+
+  // cancela estagio atual
+  $('#back').click(function() {
+    if ($stage == 'services-box') {
+      // limpa o select, Exibe todos os servicos, retorna um estagio, esconde a box dos servicos, exibe a box de categorias, Desabilita o botão voltar
+      $stage = 'categories-box';
+      $('#hair-sizes').val('');
+      $('#services > div').show();
+      $('#services-box').hide();
+      $('#categories-box').fadeIn(450);
+      $('#back').prop('disabled', true);
+      // $('#services-added').append('<li><%= link_to "asdasdasas", "/path1"  %></li>');
+    }
+
+  })
+
+</script>
