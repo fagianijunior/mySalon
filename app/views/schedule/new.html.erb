@@ -45,7 +45,7 @@
               <i class="<%= service.icon || 'mysalon-open-scissors' %>" style="font-size:40px;"></i><BR><%= service.title %>
             </button>
             <div class="employees">
-              <%= select_tag("Employees", options_for_select(service.employee),
+              <%= select_tag("Employees", options_from_collection_for_select(service.employee, :id, :name),
               class: "form-control employees", prompt: "Select the preferred professional...") %>
             </div>
           </div>
